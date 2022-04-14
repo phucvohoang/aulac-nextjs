@@ -1,0 +1,53 @@
+/*======GLOBAL STYLE========*/
+:root {
+  --color-orange: #F6A64D;
+  --color-green: #8BA73B;
+  --color-highlight: rgb(139,167,59);
+  --color-text: #626262;
+  --color-border: #edecec;
+  --color-backcolor-icon: #f2f4ec;
+  --border: .1rem solid var(--color-border)
+}
+.highlight-text {
+  color: var(--color-highlight);
+}
+
+@mixin body-description-styles {
+  width: 100%;
+  font-size: 1.4rem;
+  color: var(--color-text);
+  background-color: #fff;
+  padding: 4rem 3rem;
+}
+/*======END GLOBAL STYLE========*/
+
+.product-detail__suggestion__container {
+  width: 100%;
+  margin-top: 3rem;
+
+  .product-detail__suggestion__header {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid lightgray;
+  }
+
+  .product-detail__suggestion__body {
+    padding-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .product {
+      width: 30%;
+
+      .product__action {
+
+        .action__wish {
+
+          button {
+            margin-right: .5rem;
+          }
+        }
+      }
+    }
+  }
+}

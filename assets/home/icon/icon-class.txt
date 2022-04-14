@@ -1,0 +1,38 @@
+
+== Navbar Icon===
+-- User
+<i class="opal-icon-wishlist" aria-hidden="true"></i>
+-- Wishlist
+<i class="opal-icon-wishlist" aria-hidden="true"></i>
+-- Cart
+<i class="opal-icon-cart" aria-hidden="true"></i>
+-- headphone support
+<i class="fa fa-headphones" aria-hidden="true"></i>
+== Navbar Icon===
+
+== Widget Icon==
+<i class="opal-icon-fruits" aria-hidden="true"></i>
+<i class="opal-icon-breakfast" aria-hidden="true"></i>
+<i class="opal-icon-bread" aria-hidden="true"></i>
+== Widget Icon==
+
+== Prodcut Icon==
+- Add Cart button
+<a href="?add-to-cart=276" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="276" data-product_sku="" aria-label="Add “Waitrose Candy Crunch Seedless Grapes400g” to your cart" rel="nofollow">Add to cart</a>
+
+-- Add Wishlist
+<a href="?add_to_wishlist=276" rel="nofollow" data-product-id="276" data-product-type="simple" data-original-product-id="276" class="add_to_wishlist single_add_to_wishlist" data-title="Add to wishlist"> <i class="yith-wcwl-icon fa fa-heart-o"></i> <span>Add to wishlist</span> </a>
+
+-- Compare Button
+<a href="http://demo2.themelexus.com/efway?action=yith-woocompare-add-product&amp;id=276" class="compare button" data-product_id="276" rel="nofollow">Compare</a>
+
+-- Select Option button
+<a href="http://demo2.themelexus.com/efway/product/appleton-estate-12-year-old-rare-blend/" data-quantity="1" class="button product_type_variable add_to_cart_button" data-product_id="229" data-product_sku="SKU-1105" aria-label="Select options for “Appleton Estate 12 Year Old Rare Blend”" rel="nofollow">Select options</a>
+== Prodcut Icon==
+
+==Contact==
+<i class="fa fa-map-marker" aria-hidden="true"></i>
+<i class="fa fa-phone" aria-hidden="true"></i>
+<i class="opal-icon-envelope" aria-hidden="true"></i>
+<i class="fa fa-clock-o" aria-hidden="true"></i>
+==Contact==

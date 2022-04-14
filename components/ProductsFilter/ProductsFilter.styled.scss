@@ -1,0 +1,38 @@
+/*======GLOBAL STYLE========*/
+:root {
+  --color-orange: #F6A64D;
+  --color-green: #8BA73B;
+  --color-highlight: rgb(139,167,59);
+  --color-text: #626262;
+  --color-border: #edecec;
+  --color-backcolor-icon: #f2f4ec;
+  --border: .1rem solid var(--color-border)
+}
+.highlight-text {
+  color: var(--color-highlight);
+}
+/*======END GLOBAL STYLE========*/
+.products__filter__container {
+  width: 100%;
+  padding: 2rem;
+  background-color: #fff;
+  margin-bottom: 2rem;
+
+  .products__filter__header {
+    width: 100%;
+    border-bottom: 1px solid lightgray;
+    font-size: 1.1rem;
+    padding-bottom: 1rem;
+  }
+
+  .products__filter__body {
+    width: 100%;
+    margin-top: 2rem;
+
+    .products__filter__slider {
+      width: 100%;
+      height: 4rem;
+      background-color: gold;
+    }
+  }
+}

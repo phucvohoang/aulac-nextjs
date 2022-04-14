@@ -1,0 +1,12 @@
+<i class="fa fa-ge" aria-hidden="true"></i>
+<i class="fa fa-hand-o-left" aria-hidden="true"></i>
+<i class="opal-icon-ship" aria-hidden="true"></i>
+<i class="opal-icon-money-check-alt" aria-hidden="true"></i>
+<i class="fa fa-headphones" aria-hidden="true"></i>
+
+-- Social Network
+<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-animation-pulse" href="https://www.facebook.com/themelexus" target="_blank"> <span class="elementor-screen-only">Facebook</span> <i class="fa fa-facebook"></i> </a>
+<a class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-animation-pulse" href="https://twitter.com/themelexus" target="_blank"> <span class="elementor-screen-only">Twitter</span> <i class="fa fa-twitter"></i> </a>
+<a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-animation-pulse" href="https://www.instagram.com/explore/tags/themelexus/" target="_blank"> <span class="elementor-screen-only">Instagram</span> <i class="fa fa-instagram"></i> </a>
+<a class="elementor-icon elementor-social-icon elementor-social-icon-google-plus elementor-animation-pulse" href="#" target="_blank"> <span class="elementor-screen-only">Google-plus</span> <i class="fa fa-google-plus"></i> </a>
+<a class="elementor-icon elementor-social-icon elementor-social-icon-linkedin elementor-animation-pulse" href="#" target="_blank"> <span class="elementor-screen-only">Linkedin</span> <i class="fa fa-linkedin"></i> </a>
