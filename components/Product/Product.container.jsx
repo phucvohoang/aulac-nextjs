@@ -1,7 +1,7 @@
 import React from 'react';
 import { useReactiveVar } from '@apollo/client';
 import Product from './Product.jsx';
-import { withRouter } from 'react-router-dom';
+import WrapperRouter from '../WrapperRouter/WrapperRouter.js';
 import { addCartItem } from '../../lib/graphql/resolvers/utils';
 import { regionVar, cartItemsVar, wishListVar } from '../../lib/graphql/cache';
 const ProductContainer = (props) => {
@@ -16,7 +16,7 @@ const ProductContainer = (props) => {
   };
   const handleBuyImmediately = (item) => {
     addCartItem(item);
-    props.history.push('/orders');
+    props.router.push('/orders');
   };
 
   return (
@@ -32,4 +32,4 @@ const ProductContainer = (props) => {
   return <p>Loading</p>;
 };
 
-export default withRouter(ProductContainer);
+export default WrapperRouter(ProductContainer);

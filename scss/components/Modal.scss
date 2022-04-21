@@ -1,0 +1,44 @@
+.modal__wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.hidden {
+    display: none;
+  }
+  .modal__wrapper--content {
+    background-color: #fff;
+    width: 40%;
+    height: 40%;
+    text-align: center;
+    border-radius: 1rem;
+    padding: 2rem;
+    overflow-y: auto;
+    @media screen and (max-width: 768px) {
+      width: 85%;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    p {
+      text-align: left;
+      font-size: 2.6rem;
+      padding: 1rem 2rem;
+      border-bottom: 0.1rem solid #ececec;
+      transition: all 0.4s;
+      cursor: pointer;
+      &:hover {
+        background-color: $color-primary;
+        color: #fff;
+      }
+    }
+  }
+}

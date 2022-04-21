@@ -1,0 +1,37 @@
+.container__privacy {
+  width: 100%;
+  margin: auto;
+  background-color: #fff;
+  padding: 5rem 2rem;
+  &--heading,
+  &--sub-heading {
+    font-size: 3.8rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    font-family: 'Popins';
+    color: goldenrod;
+    border-bottom: 0.1rem solid #ececec;
+    display: inline-block;
+    text-transform: uppercase;
+  }
+  &--sub-heading {
+    font-size: 2.8rem;
+  }
+  &--text {
+    font-size: 1.6rem;
+    margin: 2rem 0;
+    text-align: justify;
+  }
+  &--list {
+    padding: 1rem 5rem;
+    li {
+      margin-bottom: 1rem;
+    }
+  }
+  &--inform {
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-family: 'Popins';
+    text-transform: uppercase;
+  }
+}

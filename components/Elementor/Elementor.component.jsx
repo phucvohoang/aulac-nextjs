@@ -1,14 +1,17 @@
-import React from 'react';
-import { withRouter } from 'react-router-dom';
-import leftImg from '../../assets/home/background/bg-home-widget-article_1.jpg';
-import rightTopImg from '../../assets/home/background/bg-home-widget-article_2.jpg';
-import rightBotImg from '../../assets/home/background/bg-home-widget-article_3.jpg';
-import { useTranslation } from 'react-i18next';
+// import React from 'react';
+import { useRouter } from 'next/router'
+import useTranslation from 'next-translate/useTranslation';
+
+const leftImg = '/assets/home/background/bg-home-widget-article_1.jpg';
+const rightTopImg = '/assets/home/background/bg-home-widget-article_2.jpg';
+const rightBotImg = '/assets/home/background/bg-home-widget-article_3.jpg';
+// import useTranslation from 'next-translate/useTranslation';
 // const leftImg = "http://demo2.themelexus.com/efway/wp-content/uploads/2020/07/h2-banner04.jpg";
 // const rightTopImg = "http://demo2.themelexus.com/efway/wp-content/uploads/2020/07/h1-banner01.jpg";
 // const rightBotImg = "http://demo2.themelexus.com/efway/wp-content/uploads/2020/07/h2-banner05.jpg";
 const Elementor = (props) => {
   const { t } = useTranslation('common');
+  const router = useRouter()
   return (
     <div className="elementor">
       <div className="elementor__left">
@@ -25,7 +28,7 @@ const Elementor = (props) => {
           <div className="elementor__btn">
             <button
               onClick={() => {
-                props.history.push('/flashsale');
+                router.push('/flashsale');
               }}
             >
               {t('seeAll')}
@@ -53,7 +56,7 @@ const Elementor = (props) => {
             <div className="elementor__btn">
               <button
                 onClick={() => {
-                  props.history.push('/recipes');
+                  router.push('/recipes');
                 }}
               >
                 {t('seeAll')}
@@ -79,7 +82,7 @@ const Elementor = (props) => {
             <div className="elementor__btn">
               <button
                 onClick={() => {
-                  props.history.push('/news');
+                  router.push('/news');
                 }}
               >
                 {t('seeAll')}
@@ -92,4 +95,4 @@ const Elementor = (props) => {
   );
 };
 
-export default withRouter(Elementor);
+export default Elementor;

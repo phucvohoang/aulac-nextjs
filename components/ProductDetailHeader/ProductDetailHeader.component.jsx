@@ -7,17 +7,17 @@ const ProductDetailHeader = (props) => {
     return (
         <div className="product-detail__header__container">
             <span>
-                <Link to="/">
+                <<Link href="/">
                     <i className="fas fa-home"/>
                 </Link>
             </span>
             <span>
-                <Link to="/products">
+                <<Link href="/products">
                     Products
                 </Link>
             </span>
             <span>
-                <Link to="#">
+                <<Link href="#">
                     {props.product.category}
                 </Link>
             </span>

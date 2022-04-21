@@ -1,0 +1,29 @@
+.news__container, .news__header {
+    width: 100%;
+
+}
+.news {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &__category {
+        width: 25%;
+    }
+    &__content {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .news {
+        display: block;
+        &__category {
+            display: none;
+        }
+        &__content {
+            width: 100%;
+        }
+    }
+}

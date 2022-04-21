@@ -1,6 +1,6 @@
   
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import WrapperRouter from '../WrapperRouter/WrapperRouter';
 
 class ScrollToTop extends React.Component {
 
@@ -15,4 +15,4 @@ class ScrollToTop extends React.Component {
     }
 }
 
-export default withRouter(ScrollToTop);
+export default WrapperRouter(ScrollToTop);

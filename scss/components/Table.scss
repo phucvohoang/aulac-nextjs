@@ -1,0 +1,289 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    // background-color: $color-primary;
+    color: #333;
+}
+  
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.table-responsive { 
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    .table.product-table { 
+        margin: 0;
+        text-align: center;
+        thead { 
+            tr { 
+                .table-remove { 
+                    width: 91px;
+                    
+                }
+                .table-image { 
+                    width: 213px;
+                    
+                }
+                .table-total { 
+                    width: 200px;
+                    
+                }
+            }
+            th:last-of-type {border-right: 0 none;}
+        }
+        tbody { 
+            tr { 
+                border-top: 1px solid $color-border;
+                .table-remove {
+                    width: 91px;
+                    
+                    button { 
+                        background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+                        color: $color-black;
+                        cursor: pointer;
+                        font-size: 16px;
+                        margin-bottom: 9px;
+                        border: 0;
+                        &:hover {color: $color-primary;}
+                    }
+                }
+                .table-image { 
+                    width: 213px;
+                    a { 
+                        display: inline-block;
+                        img { 
+                            width: 75px;
+                        }
+                    }
+                }
+                .table-p-name { 
+                    text-transform: capitalize;
+                    a { 
+                        color: $color-black; font-size: 14px; font-weight: 500;
+                        text-decoration: none;
+                        &:hover {
+                            color: $color-primary;
+                        }
+                    }
+                }
+                .table-p-price { 
+                    p { 
+                        color: $color-black; font-size: 14px; font-weight: 700; text-transform: initial;
+                        & span.line-through {text-decoration: line-through; margin-right: 5px}
+                    }
+                }
+                .table-p-qty { 
+                    input { 
+                        border: 2px solid $color-border;
+                        color: $color-black;
+                        font-size: 15px;
+                        height: 55px;
+                        padding: 0 0 0 7px;
+                        text-align: center;
+                        width: 52px;
+                        border-radius: 0;
+                    }
+                }
+                .table-stock {
+                    color: $color-primary;
+                    font-size: 14px;
+                    font-weight: 500;
+                    text-transform: capitalize;
+                    width: 229px;
+                }
+                .table-add-cart > a {
+                    background: $color-white;
+                    border: 2px solid $color-border;
+                    cursor: pointer;
+                    font-weight: 600;
+                    height: 43px;
+                    line-height: 39px;
+                    padding: 0 30px;
+                    color: $dark-hover;
+                    @include border-radius(30px);
+                    font-size: 12px;
+                    text-transform: uppercase;
+                    &:hover {
+                        background: $color-primary none repeat scroll 0 0;
+                        border-color: $color-primary;
+                        color: $color-white;
+                    }
+                }
+                .table-total { 
+                    p { 
+                        color: $color-primary; font-size: 14px; font-weight: 700;
+                    }
+                }
+                &:hover {background: $color-grey none repeat scroll 0 0}
+                & td:last-of-type {border-right: 0 none;}
+            }
+            p {
+                margin: 0;
+            }
+        }
+        & thead th, & tbody td {
+            border-bottom: 0 none;
+            border-right: 1px solid $color-border;
+            border-top: 0 none;
+            color: $color-black;
+            font-size: 15px;
+            line-height: 25px;
+            padding: 20px 10px;
+            text-transform: uppercase;
+            vertical-align: middle;
+            text-align: center;
+        }
+        &.desktop {
+            @media screen and (max-width: 768px){
+                display: none;
+            }
+        }
+        &.mobile {
+            display: none;
+
+            @media screen and (max-width: 768px){
+                display: block;
+            }
+        }
+    }
+}
+.table-bottom-wrapper { 
+    border-bottom: 1px solid $color-border;
+    border-left: 1px solid $color-border;
+    border-right: 1px solid $color-border;
+    padding: 20px;
+    .table-coupon { 
+        border: 1px solid $color-border; margin: 0 0 20px; padding: 25px;
+        input { 
+            background: $color-grey;
+            border: 1px solid $color-border;
+            color: $input-color;
+            font-size: 14px;
+            height: 50px;
+            line-height: 49px;
+            padding: 0 20px;
+            width: 300px;
+            box-shadow: 0 1px 0 0 $color-white;
+            @include border-radius(30px);
+        }
+        input::-moz-placeholder {color: $input-color;}
+        button { 
+            background: $color-white;
+            border: 2px solid $color-border;
+            cursor: pointer;
+            font-weight: 600;
+            height: 50px;
+            line-height: 47px;
+            margin-left: 15px;
+            padding: 0 30px;
+            color: $dark-hover;
+            @include border-radius(30px);
+            // font-family: $oswald;
+            text-transform: uppercase;
+            &:hover {
+                background: $color-primary none repeat scroll 0 0;
+                border-color: $color-primary;
+                color: $color-white;
+            }
+        }
+    }
+    .table-update { 
+        button { 
+            background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+            border: 2px solid $color-grey;
+            color: $input-color;
+            font-size: 14px;
+            font-weight: 500;
+            height: 50px;
+            padding: 0 30px;
+            vertical-align: middle;
+            @include border-radius(30px);
+            text-transform: uppercase;
+            &:hover {
+                color: $color-primary;
+                border-color: $color-primary;
+            }
+        }
+    }
+}
+.table-total-wrapper {
+    .table-total-content { 
+        border: 1px solid $color-border; padding: 30px; width: 48%;
+        h2 { 
+            color: $dark-hover;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 26px;
+            margin-bottom: 22px;
+            text-align: right;
+            text-transform: uppercase;
+        }
+        .table-total-amount { 
+            .single-total-content {
+                margin-bottom: 13px;
+                font-size: 15px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                & > span { 
+                    &:first-of-type {
+                        color: $color-black;
+                        display: block;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                    }
+                }
+                .c-total-price {
+                    color: $color-primary; font-weight: 700;
+                    span {
+                        color: $color-black; font-weight: 500;
+                    }
+                }
+                & > a {
+                    color: $color-primary; 
+                    font-weight: 500;
+                    &:hover {
+                        color: $color-primary;
+                    }
+                }
+                &:last-of-type {
+                    margin-top: 26px;
+                    span {
+                        font-size: 20px;
+                    }
+                }
+            }
+            & > a { 
+                text-decoration: none;
+                border: 2px solid $color-grey;
+                background: $color-white;
+                color: $color-black;
+                display: block;
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 51px;
+                margin-top: 45px;
+                text-align: center;
+                width: 100%;
+                @include border-radius(30px);
+                // font-family: $oswald;
+                text-transform: uppercase;
+                transition: all .2s;
+                &:hover {
+                    background: $color-primary none repeat scroll 0 0;
+                    border-color: $color-primary;
+                    color: $color-white;
+                }
+            }
+        }
+        @media screen and (max-width: 768px){
+            width: 100%;
+        }
+    }
+}
+input:focus, button:focus {box-shadow: none;}

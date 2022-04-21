@@ -1,15 +1,17 @@
 import React from 'react';
-//import {ReactComponent as Logo} from '../../assets/footer/logo.svg'
-// import { Link, NavLink, withRouter } from 'react-router-dom';
-import { Link, NavLink, withRouter } from 'next/link';
+//import {ReactComponent as Logo} from '../../public/assets/footer/logo.svg'
+// import { Link, Link, withRouter } from 'react-router-dom';
+// import { Link, withRouter } from 'next/link';
+import Link from '../Link/Link';
 import LoginRegister from '../LoginRegister/LoginRegister.container.jsx';
 import { addCommas, mapCategory } from '../../util/helper';
 import { Form, Input, Collapse, Space, Popover } from 'antd';
-import logo from '../../assets/logo-2x.png';
 import HeaderMobile from './Header-Mobile';
 import FeatherIcon from 'feather-icons-react';
-import withTranslation from 'next-translate/withTranslation';
-import bgHeader from '../../assets/banners/header@2x.png';
+// import withTranslation from 'next-translate/withTranslation';
+import WrapperTranslate from '../WrapperTranslate/WrapperTranslate.js';
+const logo = '/assets/logo-2x.png';
+const bgHeader = '/assets/banners/header@2x.png';
 const { Panel } = Collapse;
 // const logo = "https://aulacshop.com/assets/img/logo.png"
 class Header extends React.Component {
@@ -136,14 +138,13 @@ class Header extends React.Component {
     this.props.chooseRegion(region);
   };
   renderCategoriesHelper = () => {
-    const { categories } = this.props;
+    const { categories, t } = this.props;
     if (categories) {
       return categories.map((cat, idx) => {
         return (
           <li key={idx} className="nav__category--item">
-            <Link to={`/products/${cat._id}`}>
-              {/* {t(mapCategory(cat.name))} */}
-              {cat.name}
+            <Link href={`/products/${cat._id}`}>
+              <>{t(mapCategory(cat.name))}</>
             </Link>
           </li>
         );
@@ -154,7 +155,7 @@ class Header extends React.Component {
   handleSubmitSearch = (values) => {
     // // console.log(values);
     if (values.keyword.trim()) {
-      this.props.history.push(`/search/${values.keyword}`);
+      this.props.router.push(`/search/${values.keyword}`);
     }
   };
   renderSelectRegion = () => {
@@ -171,9 +172,10 @@ class Header extends React.Component {
 
   render() {
     const numbersOnCart = Object.keys(this.props.cartItems).length;
-    const { t, lang: language } = this.props.i18n;
+    const { t, language } = this.props;
     let windowLocal = typeof window === 'undefined' ? {} : window;
     // // console.log(this.props.GoogleUrl, this.props.FBUrl )
+    // return <h1>This is header</h1>;
     return (
       <React.Fragment>
         <header
@@ -181,12 +183,6 @@ class Header extends React.Component {
           style={{ backgroundImage: `url(${bgHeader})` }}
         >
           <div className="header__offer">
-            <div className="header__offer--text">
-              {/* <p>
-                                Giảm giá sốc hàng tuần
-                                <span className="highlight-text"> 50%</span>
-                            </p> */}
-            </div>
             <div className="header__offer--location">
               <i className="fas fa-map-marker-alt" />
               <span>
@@ -197,7 +193,6 @@ class Header extends React.Component {
               </div>
             </div>
             <div className="header__offer--location">
-              {/* <i className="fas fa-map-marker-alt" /> */}
               <i className="far fa-map"></i>
               <span>
                 {t('switchLan')}: {language === 'vn' ? 'Vietnamese' : 'English'}
@@ -224,7 +219,6 @@ class Header extends React.Component {
           </div>
           <div className="header__user">
             <div className="header__user__logo">
-              {/* <Logo className="logo"/> */}
               <img src={logo} alt="logo" />
             </div>
             <div className="header__user__search">
@@ -239,12 +233,11 @@ class Header extends React.Component {
             </div>
             <div className="header__user__action">
               <div className="header__user__action--desktop">
-                {/* <LoginRegister
+                <LoginRegister
                   GoogleUrl={this.props.GoogleUrl}
                   FBUrl={this.props.FBUrl}
-                /> */}
-
-                <Link to="/orders">
+                />
+                <Link href="/orders">
                   <div className="header__user__action--cart nav-action-style">
                     <i className="fas fa-cart-plus icon-style" />
 
@@ -286,48 +279,47 @@ class Header extends React.Component {
                 <ul>{this.renderCategoriesHelper()}</ul>
               </div>
             </div>
-            <div className="nav__navigation">
+            {/* <div className="nav__navigation">
               <ul>
                 <li>
-                  <NavLink exact to="/" activeClassName="active__nav">
+                  <Link exact to="/" activeClassName="active__nav">
                     {t('header.home')}
-                  </NavLink>
+                  </Link>
                 </li>
                 <li>
-                  <NavLink
+                  <Link
                     to={`/products/${
                       this.props.categories && this.props.categories[0]._id
                     }`}
                     activeClassName="active__nav"
                   >
-                    {/* Sản Phẩm */}
                     {t('header.products')}
-                  </NavLink>
+                  </Link>
                 </li>
                 <li>
-                  <NavLink to="/news" activeClassName="active__nav">
+                  <Link href="/news" activeClassName="active__nav">
                     {t('header.news')}
-                  </NavLink>
+                  </Link>
                 </li>
 
                 <li>
-                  <NavLink to="/recipes" activeClassName="active__nav">
+                  <Link href="/recipes" activeClassName="active__nav">
                     {t('header.recipe')}
-                  </NavLink>
+                  </Link>
                 </li>
                 <li>
-                  <NavLink to="/about-us" activeClassName="active__nav">
+                  <Link href="/about-us" activeClassName="active__nav">
                     {t('header.stores')}
-                  </NavLink>
+                  </Link>
                 </li>
 
                 <li>
-                  <NavLink to="/contact" activeClassName="active__nav">
+                  <Link href="/contact" activeClassName="active__nav">
                     {t('header.about')}
-                  </NavLink>
+                  </Link>
                 </li>
               </ul>
-            </div>
+            </div> */}
             <div className="nav__contact">
               <i className="fas fa-headphones" />
               <p>0917 202 639</p>
@@ -343,4 +335,5 @@ class Header extends React.Component {
 }
 // export default Header;
 
-export default withTranslation(Header, 'common');
+export default WrapperTranslate(Header);
+// export default withTranslation(Header, 'common');

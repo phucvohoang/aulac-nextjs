@@ -1,0 +1,347 @@
+/*GLOBAL STYLES*/
+:root {
+    --color-oraBnge: #F6A64D;
+    --color-green: #8BA73B;
+    --color-highlight: rgb(139, 167, 59);
+    --color-text: #626262;
+    --color-border: #edecec;
+    --color-backcolor-icon: #f2f4ec;
+    --border: .1rem solid var(--color-border)
+  }
+  
+  .highlight-text {
+    color: var(--color-highlight);
+  }
+  
+  /*END GLOBAL STYLES*/
+  
+  .contact__form__container {
+    width: 100%;
+    padding: 2rem;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  
+    .contact__form__map {
+      position: relative;
+      width: 48%;
+      height: 50rem;
+      //background-color: red;
+    }
+  
+    .contact__form__message {
+      width: 48%;
+      padding: 0 3rem;
+      max-height: 48rem;
+      overflow-y: auto;
+      .contact__form {
+        label {
+          font-size: 1.4rem;
+          font-weight: bold;
+        }
+  
+        > div {
+          margin-top: 2rem;
+        }
+  
+        .contact__form--header {
+          width: 100%;
+          padding: 1rem 0;
+  
+          h1 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+          }
+  
+          p {
+            font-size: 1.4rem;
+            color: var(--color-text);
+          }
+  
+        }
+  
+        .contact__form--name {
+  
+          .contact__input__name {
+  
+          }
+        }
+  
+        .contact__form--phone-email {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+  
+          .contact__form--phone {
+            width: 48%;
+          }
+  
+          .contact__form--email {
+            width: 48%;
+          }
+        }
+  
+        .contact__form--message-text {
+          width: 100%;
+  
+          .contact__input__message {
+            width: 100%;
+            border-radius: 1rem;
+            border: 2px solid lightgray;
+            padding: 1rem;
+            transition: .4s;
+          }
+  
+          .contact__input__message:focus {
+            border: 2px solid var(--color-highlight);
+            transition: .4s;
+          }
+        }
+  
+        .contact__form--message-action {
+          width: 100%;
+  
+          .contact__btn {
+            width: 100%;
+            height: 4rem;
+            outline: none;
+            border-radius: 4rem;
+            cursor: pointer;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #fff;
+            border: none;
+            background-color: var(--color-highlight);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+  
+      }
+    }
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .contact__form__container {
+  
+      .contact__form__map {
+  
+      }
+  
+      .contact__form__message {
+  
+        .contact__form {
+          label {
+  
+          }
+  
+          > div {
+  
+          }
+  
+          .contact__form--header {
+  
+            h1 {
+  
+            }
+  
+            p {
+  
+            }
+  
+          }
+  
+          .contact__form--name {
+  
+            .contact__input__name {
+  
+            }
+          }
+  
+          .contact__form--phone-email {
+  
+            .contact__form--phone {
+  
+            }
+  
+            .contact__form--email {
+  
+            }
+          }
+  
+          .contact__form--message-text {
+  
+  
+            .contact__input__message {
+  
+            }
+  
+            .contact__input__message:focus {
+  
+            }
+          }
+  
+          .contact__form--message-action {
+            width: 100%;
+  
+            .contact__btn {
+  
+            }
+          }
+  
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 992px) {
+    .contact__form__container {
+      justify-content: flex-start;
+      flex-direction: column;
+  
+      .contact__form__map {
+        width: 100%;
+      }
+  
+      .contact__form__message {
+        width: 100%;
+  
+        .contact__form {
+          label {
+  
+          }
+  
+          > div {
+  
+          }
+  
+          .contact__form--header {
+  
+            h1 {
+  
+            }
+  
+            p {
+  
+            }
+  
+          }
+  
+          .contact__form--name {
+  
+            .contact__input__name {
+  
+            }
+          }
+  
+          .contact__form--phone-email {
+  
+            .contact__form--phone {
+  
+            }
+  
+            .contact__form--email {
+  
+            }
+          }
+  
+          .contact__form--message-text {
+  
+  
+            .contact__input__message {
+  
+            }
+  
+            .contact__input__message:focus {
+  
+            }
+          }
+  
+          .contact__form--message-action {
+            width: 100%;
+  
+            .contact__btn {
+  
+            }
+          }
+  
+        }
+      }
+    }
+  
+    @media screen and (max-width: 768px) {
+      .contact__form__container {
+  
+        .contact__form__map {
+  
+        }
+  
+        .contact__form__message {
+  
+          .contact__form {
+            label {
+  
+            }
+  
+            > div {
+  
+            }
+  
+            .contact__form--header {
+  
+              h1 {
+  
+              }
+  
+              p {
+  
+              }
+  
+            }
+  
+            .contact__form--name {
+  
+              .contact__input__name {
+  
+              }
+            }
+  
+            .contact__form--phone-email {
+  
+              .contact__form--phone {
+  
+              }
+  
+              .contact__form--email {
+  
+              }
+            }
+  
+            .contact__form--message-text {
+  
+  
+              .contact__input__message {
+  
+              }
+  
+              .contact__input__message:focus {
+  
+              }
+            }
+  
+            .contact__form--message-action {
+              width: 100%;
+  
+              .contact__btn {
+  
+              }
+            }
+  
+          }
+        }
+      }
+    }
+  }

@@ -1,7 +1,7 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import WrapperRouter from '../WrapperRouter/WrapperRouter';
 import { getIconImage, mapCategory } from '../../util/helper';
-import { useTranslation } from 'react-i18next';
+import useTranslation from 'next-translate/useTranslation';
 const Widget = (props) => {
   const { categories, history } = props;
   const { t } = useTranslation('common');
@@ -78,7 +78,7 @@ const Widget = (props) => {
   };
   const handleClick = (id) => {
     // console.log(id)
-    history.push(`/products/${id}`);
+    router.push(`/products/${id}`);
   };
   const renderWidget = () => {
     const data = renderIconHelper();
@@ -125,4 +125,4 @@ const Widget = (props) => {
   return <div className={`widget__container`}>{renderWidget()}</div>;
 };
 
-export default withRouter(Widget);
+export default WrapperRouter(Widget);

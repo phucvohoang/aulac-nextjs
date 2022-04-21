@@ -1,0 +1,18 @@
+.orderDetails__page {
+  background-color: #fff;
+  padding: 5rem 2rem;
+  .content__orderDetail {
+    display: block;
+  }
+  .content__login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .message__orderdetail {
+      color: #fff;
+      background-color: goldenrod;
+      border-radius: 0.5rem;
+      padding: 1rem 2rem;
+    }
+  }
+}

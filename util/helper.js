@@ -1,18 +1,18 @@
-import iconAnLien from '../assets/icon/icon-an-lien.png';
-import iconGiaVi from '../assets/icon/icon-gia-vi.png';
-import iconGiaiKhat from '../assets/icon/icon-giai-khat.png';
-import iconHangKho from '../assets/icon/icon-hang-kho.png';
-import iconHangLanh from '../assets/icon/icon-hang-lanh.png';
-import iconHangLon from '../assets/icon/icon-hang-lon.png';
-import iconTietTrung from '../assets/icon/icon-tiet-trung.png';
+const iconAnLien = '/assets/icon/icon-an-lien.png';
+const iconGiaVi = '/assets/icon/icon-gia-vi.png';
+const iconGiaiKhat = '/assets/icon/icon-giai-khat.png';
+const iconHangKho = '/assets/icon/icon-hang-kho.png';
+const iconHangLanh = '/assets/icon/icon-hang-lanh.png';
+const iconHangLon = '/assets/icon/icon-hang-lon.png';
+const iconTietTrung = '/assets/icon/icon-tiet-trung.png';
 
-import bannerAnLien from '../assets/banners/an-lien/an-lien-desk.png';
-import bannerGiaVi from '../assets/banners/gia-vi/gia-vi-desk.png';
-import bannerGiaiKhat from '../assets/banners/giai-khat/giai-khat-desk.png';
-import bannerHangKho from '../assets/banners/hang-kho/hang-kho-desk.png';
-import bannerHangLanh from '../assets/banners/hang-lanh/hang-lanh-desk.png';
-import bannerHangLon from '../assets/banners/hang-lon/hang-lon-desk.png';
-import bannerTietTrung from '../assets/banners/tiet-trung/tiet-trung-desk.png';
+const bannerAnLien = '/assets/banners/an-lien/an-lien-desk.png';
+const bannerGiaVi = '/assets/banners/gia-vi/gia-vi-desk.png';
+const bannerGiaiKhat = '/assets/banners/giai-khat/giai-khat-desk.png';
+const bannerHangKho = '/assets/banners/hang-kho/hang-kho-desk.png';
+const bannerHangLanh = '/assets/banners/hang-lanh/hang-lanh-desk.png';
+const bannerHangLon = '/assets/banners/hang-lon/hang-lon-desk.png';
+const bannerTietTrung = '/assets/banners/tiet-trung/tiet-trung-desk.png';
 
 export const getIconImage = (slugName) => {
   switch (slugName) {

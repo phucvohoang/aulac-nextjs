@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 // import { transformProductObject } from '../../lib/graphql/resolvers/utils.js';
 import { addCommas } from '../../util/helper';
 const Product = (props) => {
@@ -64,7 +64,7 @@ const Product = (props) => {
       )}
 
       <div className="product__image">
-        <Link to={`/product/${slug}`}>
+        <Link href={`/product/${slug}`}>
           <img src={image} alt={name} />
         </Link>
       </div>
@@ -93,7 +93,7 @@ const Product = (props) => {
           </div>
         </div>
         <div className="product__name text-center">
-          <Link to={`/product/${slug}`}>
+          <Link href={`/product/${slug}`}>
             <h5>{name}</h5>
           </Link>
         </div>

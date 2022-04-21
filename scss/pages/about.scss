@@ -1,0 +1,76 @@
+.about {
+    background-color: #fff;
+    padding: 5rem 2rem;
+    margin-bottom: 5rem;
+    .heading {
+        font-size: 3.8rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+        font-family: "Popins";
+        color: goldenrod;
+        border-bottom: .1rem solid #ececec;
+        display: inline-block;
+        text-transform: uppercase;
+    }
+    &__wrapper {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        @media screen and (max-width:768px){
+            flex-direction: column-reverse;
+        }
+        .left__content {
+            width: 60%;
+            padding-right: 5rem;
+            text-align: justify;
+            @media screen and (max-width:768px){
+                width: 100%;
+                padding: 0;
+            }
+            p {
+                margin-bottom: 4rem;
+                @media screen and (max-width:768px){
+                    text-align: justify;
+                }
+            }
+
+            ol {
+                width: 80%;
+                margin: 4rem auto;
+                li {
+                    font-weight: bold;
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+        .right__content {
+            width: 40%;
+            @media screen and (max-width:768px){
+                width: 100%;
+            }
+            .image__block {
+                width: 100%;
+                text-align: center;
+                border-radius: .5rem;
+                overflow: hidden;
+                @media screen and (max-width:768px){
+                    margin-bottom: 1rem;
+                }
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.contact__form--name, .contact__form--phone-email {
+    input {
+        padding: 1rem 2rem;
+        border: .2rem solid #000;
+        border-radius: .5rem;
+        background: #fbfbfb none repeat scroll 0 0;
+        margin-top: 2rem;
+        display: block;
+    }
+}

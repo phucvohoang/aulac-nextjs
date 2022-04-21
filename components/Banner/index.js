@@ -4,13 +4,15 @@ import BannerHorizontal from './horizontal';
 import BannerLeft from './vertical/left';
 import BannerRight from './vertical/right';
 import { GET_ADS_DESKTOP } from '../../lib/graphql/queries';
+
 const BannerContainer = (props) => {
   const { isCenter, isLeft, isRight } = props;
-  const { data, loading, error } = useQuery(GET_ADS_DESKTOP);
+  const { data, loading, error } = useQuery(GET_ADS_DESKTOP, { fetchPolicy: 'network-only'});
   if (loading) {
     return <p>Loading...</p>;
   }
   if (error) {
+    console.log('im in error getAdsDesktop')
     console.log(error);
     return <p>Error...</p>;
   }
@@ -23,4 +25,12 @@ const BannerContainer = (props) => {
     return <BannerRight Ads={getAdsDesktop} />;
   }
 };
+
+// export async function getServerSideProps() {
+//   try {
+
+//   } catch (e) {
+//     console.log(e)
+//   }
+// }
 export default BannerContainer;

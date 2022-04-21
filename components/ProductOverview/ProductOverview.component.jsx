@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Product from "../Product/Product.container.jsx";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
+import useTranslation from "next-translate/useTranslation";
+
 import { mapTabSection } from "../../util/helper.js";
 import { Box } from "../Banner/styled.js";
 import { BoxItem } from "../Banner/horizontal/styled.js";

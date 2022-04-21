@@ -1,0 +1,42 @@
+.table-p-qty{
+    button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        outline: none;
+    }
+    .btn {
+        visibility: hidden;
+        opacity: 0;
+        transition: all .3s;
+
+        &.active {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+.table__actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &--change {
+        width: 40%;
+        padding: 0 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 2px solid lightgray;
+        border-radius: 5rem;
+        margin: 0 2rem;
+    }
+    .btn-check {
+        i.fa-check {
+            color: $color-green;
+        }
+        
+    }
+    .btn-cancel {
+        color: $color-red;
+    }
+}

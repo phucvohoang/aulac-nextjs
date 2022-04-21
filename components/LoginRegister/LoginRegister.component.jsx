@@ -1,9 +1,10 @@
 import { notification, Button, Spin, Row } from 'antd';
 import React from 'react';
-import { Link } from 'next/link';
+import Link from 'next/link';
 import { registerTokenAndSubscribe } from '../../firebase/firebase.util';
-import { withTranslation } from 'react-i18next';
+// import { withTranslation } from 'react-i18next';
 import { getItem } from '../../util/localStorage';
+import WrapperTranslate from '../WrapperTranslate/WrapperTranslate';
 // import axios from 'axios';
 
 // const BASE_URL = 'https://aulac-api.purplese.com'
@@ -200,12 +201,12 @@ class LoginRegister extends React.Component {
 
               <div className="user__actions">
                 <div className="user__action--link">
-                  <Link to="/profile">{t('account')}</Link>
+                  <Link href="/profile">{t('account')}</Link>
                 </div>
               </div>
               <div className="user__actions">
                 <div className="user__action--link">
-                  <Link to="/chat">{t('message')}</Link>
+                  <Link href="/chat">{t('message')}</Link>
                 </div>
               </div>
               <div className="user__actions">
@@ -313,7 +314,7 @@ class LoginRegister extends React.Component {
                     )}
 
                     {/* <span>
-                                        <Link to="#">Lost your password?</Link>
+                                        <<Link href="#">Lost your password?</Link>
                                     </span> */}
                   </div>
                 )}
@@ -352,4 +353,4 @@ class LoginRegister extends React.Component {
 }
 
 // export default withTranslation('common')(LoginRegister);
-export default LoginRegister;
+export default WrapperTranslate(LoginRegister);

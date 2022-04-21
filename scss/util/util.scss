@@ -1,0 +1,50 @@
+.flex-sb {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pt-10{
+    padding-top: 10rem
+}
+.pt-5{
+    padding-top: 5rem
+}
+.pb-10 {
+    padding-bottom: 5rem;
+}
+.pb-5 {
+    padding-bottom: 5rem;
+}
+.text-center {
+    text-align: center;
+}
+
+.ant-carousel {
+    width: 100%;
+}
+.ant-carousel .slick-dots {
+    bottom: -4rem;
+}
+
+.ant-carousel .slick-dots li button {
+    background: $color-primary;
+    opacity: 0.4;
+    height: .5rem;
+}
+  
+  .ant-carousel .slick-dots li.slick-active button {
+    opacity: 1;
+    background: $color-primary;
+    height: .5rem;
+  }
+//   .rcw-conversation-container > .rcw-header {
+//     background-color: red;
+//   }
+  
+//   .rcw-message > .rcw-response {
+//     background-color: black;
+//     color: white;
+//   }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { addCommas } from '../../util/helper';
 class TableRow extends React.Component {
   constructor(props) {
@@ -73,12 +73,12 @@ class TableRow extends React.Component {
           <td className="table-p-name">
             <div>
               <div className="table-image">
-                <Link to={`/product/${product.slug}`}>
+                <Link href={`/product/${product.slug}`}>
                   <img src={img} alt={product.name} />
                 </Link>
               </div>
               <p style={{ margin: '15px 0px' }}>
-                <Link to={`/product/${product.slug}`}>{product.name}</Link> -{' '}
+                <Link href={`/product/${product.slug}`}>{product.name}</Link> -{' '}
                 {addCommas(product.salePrice)}đ
               </p>
               <p style={{ margin: '15px 0px', color: 'goldenrod' }}>
@@ -145,12 +145,12 @@ class TableRow extends React.Component {
           </button>
         </td>
         <td className="table-image">
-          <Link to={`/product/${product.slug}`}>
+          <Link href={`/product/${product.slug}`}>
             <img src={img} alt={product.name} />
           </Link>
         </td>
         <td className="table-p-name">
-          <Link to={`/product/${product.slug}`}>{product.name}</Link>
+          <Link href={`/product/${product.slug}`}>{product.name}</Link>
         </td>
         <td className="table-p-price">
           <p>{addCommas(product.salePrice)}đ</p>

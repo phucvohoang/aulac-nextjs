@@ -1,0 +1,449 @@
+/*========GLOBAL STYLES=========*/
+@mixin bannerContentAnimation($animationDelay: 0s) {
+  opacity: 0;
+  visibility: hidden;
+  animation-name: contentAnimation;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+  animation-delay: $animationDelay;
+}
+
+@keyframes contentAnimation {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@mixin bannerImageAnimation($animationDelay: 0s) {
+  animation: imageTranslateAnimation 4s, 4s imageScaleUpAnimation 4s infinite;
+  //animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  //animation-delay: $animationDelay;
+}
+
+@keyframes imageTranslateAnimation {
+  0% {
+    transform: translateY(50%) scale(0.8);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes imageScaleUpAnimation {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@mixin bannerMainImageAnimation {
+  animation-name: mainImageScaleAnimation;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes mainImageScaleAnimation {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.banner__content {
+  width: 30%;
+  position: absolute;
+  top: 25%;
+  left: 4%;
+
+  .banner__content--delivery {
+    @include bannerContentAnimation();
+
+    h4 {
+      font-family: Satisfy;
+      height: auto;
+      width: auto;
+      //color: rgb(139, 167, 59);
+      text-decoration: none;
+      white-space: nowrap;
+      min-height: 0px;
+      min-width: 0px;
+      max-height: none;
+      max-width: none;
+      text-align: left;
+      line-height: 40px;
+      letter-spacing: 0px;
+      font-weight: 400;
+      font-size: 32px;
+      border-color: rgb(98, 98, 98);
+      transform-origin: 50% 50% 0px;
+      opacity: 1;
+      transform: translate(0px);
+      visibility: visible;
+    }
+  }
+
+  .banner__content--title {
+    margin-bottom: 1rem;
+    @include bannerContentAnimation(0.6s);
+
+    span {
+      font-family: 'Roboto', serif;
+      font-size: 4rem;
+      font-weight: bold;
+      display: block;
+
+      @media screen and (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .banner__content--paragraph {
+    margin-bottom: 3rem;
+    @include bannerContentAnimation(1.2s);
+
+    p {
+      font-family: 'Roboto', serif;
+      font-size: 1.8rem;
+      font-weight: normal;
+      @media screen and (max-width: 768px) {
+        font-size: 1.6rem;
+        text-align: left;
+      }
+    }
+  }
+
+  .banner__content--button {
+    @include bannerContentAnimation(1.8s);
+
+    button {
+      cursor: pointer;
+      background-color: $color-primary;
+      border: none;
+      font-size: 1.4rem;
+      color: #fff;
+      font-weight: bold;
+      width: 18rem;
+      height: 5rem;
+      border-radius: 5rem;
+      transition: 0.4s;
+
+      @media screen and (max-width: 768px) {
+        width: 15rem;
+        height: 4rem;
+      }
+    }
+
+    button:hover {
+      background-color: darken($color-primary, 10%);
+      transition: 0.4s;
+    }
+  }
+}
+
+.hide--banner {
+  animation-name: hide-banner-animation;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+  display: none;
+}
+
+@keyframes hide-banner-animation {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/*========END GLOBAL STYLES=========*/
+
+.banner {
+  position: relative;
+  margin-top: 2rem;
+  width: 100%;
+  height: 56.8rem;
+  overflow: hidden;
+  @media screen and (max-width: 768px) {
+    height: 40rem;
+  }
+  .banner__first {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    background-color: #4d8526;
+    overflow: hidden;
+
+    .banner__img__top-left {
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include bannerImageAnimation();
+    }
+
+    .banner__img__top-right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      @include bannerImageAnimation();
+    }
+
+    .banner__img__bot-left {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      @include bannerImageAnimation();
+    }
+
+    .banner__img--main {
+      width: 65%;
+      position: absolute;
+      top: 50%;
+      left: 68%;
+      @include bannerMainImageAnimation;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .banner__second {
+    position: relative;
+    width: 100%;
+    height: 56.8rem;
+    background-size: cover;
+    border-radius: 0.5rem;
+    // background-color: #fff;
+    /*opacity: 1;
+      visibility: visible;*/
+
+    .banner__content {
+      position: absolute;
+      top: 20%;
+      left: 5%;
+      display: none;
+    }
+
+    .banner__img__top-right {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 30%;
+      animation: second-banner-img-top-right--move,
+        second-banner-img-top-right--scale infinite;
+      animation-duration: 4s, 4s;
+      animation-delay: 0s, 4s;
+      animation-fill-mode: forwards;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    @keyframes second-banner-img-top-right--move {
+      0% {
+        transform: translateX(20%);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes second-banner-img-top-right--scale {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.1);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .banner__img__center {
+      position: absolute;
+      top: 5%;
+      left: 35%;
+      width: 100%;
+      animation-name: second-banner-img-center-animation;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+
+      img {
+        width: 45%;
+      }
+      @media screen and (max-width: 768px) {
+        top: 35%;
+        left: 45%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    @keyframes second-banner-img-center-animation {
+      0% {
+        opacity: 0.6;
+        transform: scale(0.8);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .banner__img__bottom {
+      position: absolute;
+      left: 25%;
+      bottom: 0%;
+      width: 40%;
+      transform: translateX(-50%);
+      animation: second-banner-img-bottom--move,
+        second-banner-img-bottom--scale infinite;
+      animation-duration: 2s, 4s;
+      animation-delay: 0s, 2s;
+      animation-fill-mode: forwards;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    @keyframes second-banner-img-bottom--move {
+      0% {
+        transform: translateY(20%);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  }
+
+  @keyframes second-banner-img-bottom--scale {
+    0% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.1);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .banner__action {
+    width: 100%;
+    padding-bottom: 1rem;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      padding: 0.5rem;
+      margin-right: 1rem;
+      display: flex;
+      justify-content: center;
+      color: #fab23f;
+      font-size: 1.4rem;
+      cursor: pointer;
+      //transition: .2s;
+    }
+
+    @mixin select-btn-style {
+      font-size: 1rem;
+      border-radius: 50%;
+      border: 1px solid #fab23f;
+    }
+
+    .selected__btn {
+      @include select-btn-style;
+    }
+
+    span:hover {
+      /*font-size: 1rem;
+        border-radius: 50%;
+        border: 1px solid #FAB23F;
+        transition: .2s;*/
+      /*animation-name: btnActionAnimation;
+        animation-duration: .2s;
+        animation-fill-mode: forwards;*/
+      @include select-btn-style;
+      transition: 0.4s;
+    }
+
+    @keyframes btnActionAnimation {
+      0% {
+        font-size: 1.4rem;
+        //border-radius: 50%;
+        //border: 1px solid #FAB23F;
+      }
+
+      100% {
+        @include select-btn-style;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .banner {
+    .banner__content--paragraph {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .banner {
+    .banner__content--paragraph {
+      margin-bottom: 1rem;
+    }
+  }
+}

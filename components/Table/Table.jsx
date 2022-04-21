@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import TableRow from './TableRow.jsx';
 import { addCommas } from '../../util/helper';
 import { Row, Space, Select, Col } from 'antd';
-import { useTranslation } from 'react-i18next';
+import useTranslation from 'next-translate/useTranslation';
 const { Option } = Select;
 const Table = (props) => {
   const {
@@ -43,11 +43,11 @@ const Table = (props) => {
         //         </button>
         //     </td>
         //     <td className="table-image">
-        //         <Link to={`/product/${key}`}>
+        //         <Link href{`/product/${key}`}>
         //             <img src={cartItems[key].image} alt={cartItems[key].name} />
         //         </Link>
         //     </td>
-        //     <td className="table-p-name"><Link to={`/product/${key}`}>{cartItems[key].name}</Link></td>
+        //     <td className="table-p-name"><Link href{`/product/${key}`}>{cartItems[key].name}</Link></td>
         //     <td className="table-p-price"><p>{cartItems[key].price}đ</p></td>
         //     <td className="table-p-qty"><input value="1" onChange={()=>{}} name="cart-qty" type="number" /></td>
         //     <td className="table-total"><p>{(cartItems[key].price * cartItems[key].quantity)}đ</p></td>
@@ -221,7 +221,7 @@ const Table = (props) => {
                       {t('cartpage.outOfStockWarn')}
                     </p>
                   ) : isLoggedIn ? (
-                    <Link to="/checkout">{t('cartpage.checkout')}</Link>
+                    <Link href="/checkout">{t('cartpage.checkout')}</Link>
                   ) : (
                     <p style={{ color: 'red', textAlign: 'center' }}>
                       {t('cartpage.loginWarn')}

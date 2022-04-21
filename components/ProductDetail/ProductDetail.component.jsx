@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, notification } from 'antd';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'next/link'
+import WrapperRouter from '../WrapperRouter/WrapperRouter';
 import {
   addCommas,
   cleaningDescription,
@@ -14,9 +15,10 @@ import {
 import { Carousel } from 'antd';
 import { addViewedProduct } from '../../util/helper';
 import Video from '../Chat-Widget/Video';
-import { withTranslation } from 'react-i18next';
+import WrapperTranslate from '../WrapperTranslate/WrapperTranslate';
+// import { withTranslation } from 'react-i18next';
 import QRCode from 'qrcode.react';
-//import productImg_4 from './../../assets/products/seafood-4.jpg';
+//import productImg_4 from './../../public/assets/products/seafood-4.jpg';
 
 class ProductDetail extends React.Component {
   constructor(props) {
@@ -243,7 +245,7 @@ class ProductDetail extends React.Component {
           <img src={image} alt={`Quantity 1`} />
         </div>
         <div className="quantity__item__name">
-          <Link to="#">{product.name}</Link>
+          <<Link href="#">{product.name}</Link>
         </div>
         <div className="quantity__item__price">
           <span>{addCommas(product.salePrice)}đ</span>
@@ -539,4 +541,4 @@ class ProductDetail extends React.Component {
   }
 }
 
-export default withRouter(withTranslation('common')(ProductDetail));
+export default WrapperRouter(WrapperTranslate(ProductDetail));

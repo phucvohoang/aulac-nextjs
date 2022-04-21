@@ -1,0 +1,15 @@
+.input__group {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 4rem;
+    label {
+        width: 20%;
+        text-align: left;
+        margin-right: 4rem;
+    }
+    input {
+        flex: 1
+    }
+}

@@ -1,9 +1,9 @@
 import React from "react";
 import './ProductDetailSuggestion.styled.scss';
 
-import productImg_10 from "../../assets/products/product-7.jpg";
-import productImg_11 from "../../assets/products/bakery_2.jpg";
-import productImg_12 from "../../assets/products/wine-beer_3.jpg";
+import productImg_10 from "../../public/assets/products/product-7.jpg";
+import productImg_11 from "../../public/assets/products/bakery_2.jpg";
+import productImg_12 from "../../public/assets/products/wine-beer_3.jpg";
 import Product from "../Product/Product";
 
 const ProductDetailSuggestion = () => {

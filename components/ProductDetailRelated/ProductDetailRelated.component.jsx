@@ -1,9 +1,9 @@
 import React from "react";
 import './ProductDetailRelated.styled.scss';
 
-import productImg_7 from "../../assets/products/product-6.jpg";
-import productImg_8 from "../../assets/products/organic-4.jpg";
-import productImg_9 from "../../assets/products/product-2.jpg";
+import productImg_7 from "../../public/assets/products/product-6.jpg";
+import productImg_8 from "../../public/assets/products/organic-4.jpg";
+import productImg_9 from "../../public/assets/products/product-2.jpg";
 import Product from "../Product/Product";
 
 const ProductDetailRelated = () => {

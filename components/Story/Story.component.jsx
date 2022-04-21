@@ -1,10 +1,10 @@
 import React from "react";
 // import './Story.styled.scss';
 
-// import StoryImg from './../../assets/home/elementor/img_our_stories.png'
-// import StoryImg2 from './../../assets/home/elementor/bg_992.jpg'
-// import LogoImg from './../../assets/home/elementor/efway_logo.png'
-import StoryImg from '../../assets/img_our_stories.png';
+// import StoryImg from './../../public/assets/home/elementor/img_our_stories.png'
+// import StoryImg2 from './../../public/assets/home/elementor/bg_992.jpg'
+// import LogoImg from './../../public/assets/home/elementor/efway_logo.png'
+import StoryImg from '../../public/assets/img_our_stories.png';
 //const StoryImg = "http://demo2.themelexus.com/efway/wp-content/uploads/2020/06/img_our_stories.png";
 //const logoEfway = "http://demo2.themelexus.com/efway/wp-content/uploads/2020/06/efway.png"
 const Story = () => {

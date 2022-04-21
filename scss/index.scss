@@ -1,0 +1,88 @@
+@import './variables/variables.scss';
+@import './util/util.scss';
+@import './util/mixin.scss';
+@import './pages/products.scss';
+@import './pages/productDetail.scss';
+@import './components/Header-2.scss';
+@import './components/HomeSlider.scss';
+@import './components/Product.scss';
+@import './components/Table.scss';
+@import './components/TableRow.scss';
+// @import './components/InputGroup.scss';
+@import './components//ProductDetail/ProductDetail.scss';
+@import './components/ProductCategory.scss';
+@import './pages/checkout.scss';
+@import './pages/news.scss';
+@import './components/Modal.scss';
+@import './components/Article.scss';
+@import './components/ArticleDetail.scss';
+@import './components/Contact/ContactForm.scss';
+@import './components/Elementor.scss';
+@import './components/Story.scss';
+@import './components/Footer.scss';
+@import './components/Widget.scss';
+@import './components/ProductOverview.scss';
+@import './components//BlogOverview.scss';
+@import './pages/profile.scss';
+@import './pages/about.scss';
+@import './pages/chat.scss';
+@import './pages/privacy.scss';
+@import './pages/orderDetail.scss';
+// @import './pages/articleDetail.scss';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #333;
+  background-color: #f2f4ec;
+  background-image: url('/assets/bg-body.png');
+  background-position: center top;
+  background-size: cover;
+  // background-repeat: repeat;
+  // background-attachment: scroll;
+}
+.container,
+#__next {
+  width: 102.4rem;
+  margin: 0rem auto;
+}
+
+p {
+  margin-bottom: 0rem;
+}
+.ant-collapse-header {
+  border-bottom: 1px solid #f3f3f3;
+}
+div[aria-expanded='true'] {
+  background-color: goldenrod;
+  color: #fff;
+  /* color: #fff; */
+}
+@media screen and (max-width: 1200px) {
+  .container,
+  #__next {
+    width: 114rem;
+  }
+}
+@media screen and (max-width: 992px) {
+  .container,
+  #__next {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container,
+  #__next {
+    width: 100%;
+  }
+}

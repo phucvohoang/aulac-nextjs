@@ -1,0 +1,110 @@
+.highlight-text {
+  color: $color-primary;
+}
+
+.blog__article__container {
+  width: 100%;
+
+  .blog__article {
+    width: 100%;
+    margin-bottom: 3rem;
+    background-color: #fff;
+    display: flex;
+    max-height: 250px;
+    // background-color: goldenrod;
+    transition: all 0.2s;
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0rem 1rem 2rem rgba(46, 34, 34, 0.05);
+    }
+    .blog__article__img {
+      width: 30%;
+      overflow: hidden;
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .blog__article__text {
+      padding: 2rem;
+
+      .article__text--title {
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+
+        a {
+          text-decoration: none;
+          color: #000;
+          transition: 0.4s;
+        }
+      }
+
+      .article__text--title:hover {
+        a {
+          color: $color-primary;
+          transition: 0.4s;
+        }
+      }
+
+      .article__text--date-comment {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        color: $color-text;
+
+        span {
+          margin-right: 1rem;
+        }
+      }
+
+      .article__text--paragraph {
+        font-size: 1.4rem;
+        color: $color-text;
+        margin-bottom: 1rem;
+      }
+
+      .article__text--action {
+        button {
+          cursor: pointer;
+          background-color: transparent;
+          border: 2px solid lightgray;
+          padding: 0.5rem 2rem;
+          border-radius: 1rem;
+          transition: 0.4s;
+
+          a {
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.4rem;
+            color: #000;
+          }
+        }
+
+        button:hover {
+          background-color: $color-primary;
+          border-color: $color-primary;
+
+          a {
+            transition: 0.4s;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .blog__article__text {
+    text-align: left;
+  }
+  .article__text--date-comment {
+    text-align: left;
+  }
+  .article__text--paragraph {
+    text-align: left;
+    font-size: 2rem;
+  }
+}

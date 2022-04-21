@@ -1,6 +1,7 @@
 import React from 'react';
 import { useQuery, gql } from '@apollo/client';
 import Footer from './Footer.component'
+import ClientOnly from '../Wrapper/fetchingClient';
 
 const LIST_CATEGORIES = gql`
     query ListCategories {
@@ -26,4 +27,4 @@ const FooterContainer = () => {
     return <Footer categories={categories} />
 }
 
-export default FooterContainer
+export default () => <ClientOnly> <FooterContainer /> </ClientOnly>

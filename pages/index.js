@@ -1,122 +1,101 @@
 import React from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
-import { gql } from '@apollo/client';
-import styles from '../styles/Home.module.css';
-import useTranslation from 'next-translate/useTranslation';
-// import withTranslation from 'next-translate/withTranslation';
-// import withTranslation from 'next-translate/withTranslation';
-import { initializeApollo } from '../lib/apollo';
-// import { t } from 'i18next';
-const LIST_CATEGORIES = gql`
-  query ListCategories {
-    listCategories {
-      _id
-      name
-    }
-  }
-`;
-
-// import React from 'react';
-// import HomeSlider from '../components/HomeSlider/HomeSlider.container';
-// import ProductOverviewContainer from '../components/ProductOverview/ProductOverview.container.js';
-// import Elementor from '../components/Elementor/Elementor.component.jsx';
-// import Widget from '../components/Widget/Widget.component.jsx';
+import HomeSlider from '../components/HomeSlider/HomeSlider.container';
+import ProductOverviewContainer from '../components/ProductOverview/ProductOverview.container.js';
+import Elementor from '../components/Elementor/Elementor.component.jsx';
+import Widget from '../components/Widget/Widget.component.jsx';
 // import { withTranslation } from 'react-i18next';
-// import { mapCategory } from '../util/helper';
-// import BannerContainer from '../components/Banner';
+import WrapperTranslate from '../components/WrapperTranslate/WrapperTranslate';
+import { mapCategory } from '../util/helper';
+import BannerContainer from '../components/Banner';
+import { LIST_CATEGORIES, LIST_SALE_REGIONS } from '../lib/graphql/queries'
+import { initializeApollo } from '../lib/apollo';
 
-// const LIST_CATEGORIES = gql`
-//   query ListCategories {
-//     listCategories {
-//       _id
-//       name
-//     }
-//   }
-// `;
-// class Home extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       category: null,
-//     };
-//   }
+class Home extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      category: null,
+    };
+  }
 
-//   componentDidMount() {
-//     const { categories } = this.props;
-//     console.log('im categories');
-//     console.log(categories);
-//     // //console.log('on did mount')
-//     // //console.log(categories)
-//     this.setState(() => {
-//       return {
-//         category: categories[0],
-//       };
-//     });
-//   }
+  componentDidMount() {
+    const { categories } = this.props;
+    console.log('im categories');
+    console.log(categories);
+    // //console.log('on did mount')
+    // //console.log(categories)
+    this.setState(() => {
+      return {
+        category: categories[0],
+      };
+    });
+  }
 
-//   renderSections = (category) => {
-//     const { region } = this.props;
-//     // //console.log(category)
-//     if (category && region) {
-//       return (
-//         <ProductOverviewContainer
-//           region={region}
-//           key={category._id}
-//           category={category}
-//         />
-//       );
-//     }
-//   };
+  renderSections = (category) => {
+    const { region } = this.props;
+    // //console.log(category)
+    if (category && region) {
+      return (
+        <ProductOverviewContainer
+          region={region}
+          key={category._id}
+          category={category}
+        />
+      );
+    }
+  };
 
-//   renderCategory = () => {
-//     const { category } = this.state;
-//     if (category) {
-//       if (this.props.categories.length > 4) {
-//         const subCategory = this.props.categories.slice(0, 4);
-//         ////console.log(this.state.category)
-//         return subCategory.map((item, idx) => {
-//           ////console.log(this.state.item._id)
-//           return (
-//             <p
-//               className={category._id === item._id ? 'active' : ''}
-//               onClick={() => {
-//                 this.setState(() => ({ category: item }));
-//               }}
-//               key={idx}
-//             >
-//               {/* {item.name} */}
-//               {this.props.t(mapCategory(item.name))}
-//             </p>
-//           );
-//         });
-//       } else {
-//       }
-//     }
-//   };
-//   render() {
-//     return (
-//       <section className="container">
-//         <Head>
-//           <title>Au Lac Shop</title>
-//           <meta
-//             name="description"
-//             content="This is a Website of Au Lac Company"
-//           />
-//         </Head>
-//         <p>Testing</p>
-//         <HomeSlider categories={this.props.categories} />
-//         <Widget categories={this.props.categories} />
-//         <BannerContainer isCenter={true} />
-//         <ProductOverviewContainer region={this.props.region} />
-//         <div style={{ paddingBottom: '40px' }}>
-//           <BannerContainer isCenter={true} />
-//         </div>
-//         <Elementor />
-//       </section>
-//     );
-//   }
-// }
+  renderCategory = () => {
+    const { category } = this.state;
+    if (category) {
+      if (this.props.categories.length > 4) {
+        const subCategory = this.props.categories.slice(0, 4);
+        ////console.log(this.state.category)
+        return subCategory.map((item, idx) => {
+          ////console.log(this.state.item._id)
+          return (
+            <p
+              className={category._id === item._id ? 'active' : ''}
+              onClick={() => {
+                this.setState(() => ({ category: item }));
+              }}
+              key={idx}
+            >
+              {/* {item.name} */}
+              {this.props.t(mapCategory(item.name))}
+            </p>
+          );
+        });
+      } else {
+      }
+    }
+  };
+  render() {
+    return (
+      <section className="container">
+        <Head>
+          <title>Au Lac Shop</title>
+          <meta
+            name="description"
+            content="This is a Website of Au Lac Company"
+          />
+        </Head>
+        <HomeSlider categories={this.props.categories} />
+        {/* <ClientOnly>
+          <HomeSlider categories={this.props.categories} />
+        </ClientOnly> */}
+        <Widget categories={this.props.categories} />
+        <BannerContainer isCenter={true} />
+        <ProductOverviewContainer region={this.props.region} />
+        <div style={{ paddingBottom: '40px' }}>
+          <BannerContainer isCenter={true} />
+        </div>
+        <Elementor />
+      </section>
+    );
+  }
+}
 // export default Home;
 
 // export default withTranslation('common')(Home);
@@ -198,34 +177,34 @@ const LIST_CATEGORIES = gql`
 //   );
 // }
 
-const Wrapper = (Component) => (props) => {
-  const { t, lang } = useTranslation('common');
-  return <Component {...props} t={t} language={lang} />;
-};
-class Home extends React.Component {
-  render() {
-    const { t, language } = this.props;
-    console.log(this.props.categories, t, language);
-    return <h1>This use for testing: {t('couponStartAtPrice')} </h1>;
-  }
-}
+// class Home extends React.Component {
+//   render() {
+//     const { t, language } = this.props;
+//     console.log(this.props.categories, t, language);
+//     return <h1>This use for testing: {t('couponStartAtPrice')} </h1>;
+//   }
+// }
 
-export default Wrapper(Home);
+export default WrapperTranslate(Home);
 
 export const getStaticProps = async () => {
   const apolloClient = initializeApollo();
   let listCategories = [];
+  let regions = []
   try {
     await apolloClient.query({
       query: LIST_CATEGORIES,
-      // variables: { code: VARIABLE },
     });
-    console.log('get data successfully');
-    // console.log(apolloClient.cache.extract().listCategories);
+    await apolloClient.query({
+      query: LIST_SALE_REGIONS
+    })
     const { listCategories: data } = apolloClient.cache.readQuery({
       query: LIST_CATEGORIES,
     });
-    console.log(data);
+    const { listSaleRegions: regionsData } = apolloClient.cache.readQuery({
+      query: LIST_SALE_REGIONS
+    })
+    regions = regionsData
     listCategories = data;
   } catch (e) {
     console.log(e);
@@ -234,6 +213,7 @@ export const getStaticProps = async () => {
     props: {
       initialApolloState: apolloClient.cache.extract(),
       categories: listCategories,
+      regions: regions
     },
   };
 };

@@ -1,0 +1,186 @@
+.chat__page {
+    width: 100%;
+    margin-top: 10rem;
+    border-radius: .5rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    position: relative;
+    @media screen and (max-width: 768px){
+        margin-top: 0;
+        
+    }
+    &__left{
+        width: 28%;
+        height: 80rem;
+        background-color: #fff;
+
+        @media screen and (max-width: 768px){
+            position:  absolute;
+            top: 0;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: left;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .2s;
+            height: 100%;
+            z-index: 9999;
+            &.active {
+                width: 80%;
+                transform: scaleX(1);
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        &--form {
+            margin: 1rem 0rem;
+        }
+        ul {
+            list-style: none;
+        }
+
+        .chat-link-signle {
+            position: relative;
+            background: #fff none repeat scroll 0% 0%;
+            border-radius: 4px;
+            width: 100%;
+            padding: 1rem 0rem;
+            border-bottom: .1rem solid #ececec;
+            &.active {
+                background-color: #BFDBFE;
+            }
+            .chat__content--user{
+                display: flex;
+                padding: 20px 24px;
+                position: relative;
+                z-index: 1;
+                .author-figure {
+                    margin-right: 15px;
+                    flex: 0.1 1 0%;
+                    img {
+                        width: 3.2rem;
+                        height: 3.2rem;
+                        border-radius: 50%;
+                    }
+                }
+                .author-info{
+                    margin-right: 6px;
+                    flex: 0.76 1 0%;
+                    p {
+                        font-weight: 600;
+                        color: rgb(39, 43, 65);
+                    }
+                    p.orderID {
+                        color: green;
+                        text-align: left;
+                    }
+                }
+            }
+            
+        }
+    }
+    &__right {
+        width: 70%;
+        height: 80rem;
+        background-color: #fff;
+
+        @media screen and (max-width: 768px){
+            width: 100%;
+            height: 50rem;
+            display: flex;
+            flex-direction: column;
+        }
+        &--title{
+            height: 6rem;
+            border-bottom: .1rem solid #ececec;
+            display: flex;
+            align-items: center;
+            padding: 0 2rem;
+
+            .toogle__list {
+                display: none;
+                @media screen and (max-width: 768px){
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-left: auto;
+
+                }
+            }
+            .name {
+                font-size: 1.6rem;
+                font-weight: bold;
+            }
+        }
+        &--body{
+            height: 68rem;
+            overflow-y: auto;
+            padding: 1rem 2rem 7rem;
+            background-color: #f7f7f7;
+            @media screen and (max-width: 768px){
+                flex: 1;
+                
+            }
+            .message {
+                
+                padding: 1rem 2rem;
+            }
+            .msg {
+                background-color: #fff;
+                padding: 1rem;
+                display: inline-block;
+                max-width: 50%;
+                border-radius: .5rem;
+
+                img.image__message {
+                    width: 100%;
+                }
+            }
+            .message.sent {
+                display: flex;
+                justify-content: flex-end;
+                .msg {
+                    background-color: #93C5FD;
+                    color: #fff;
+                }
+            }
+            .message.received{
+                
+                width: 60%;
+            }
+        }
+        &--form{
+            height: 6rem;
+            border-top: .1rem solid #ececec;
+            width: 100%;
+            display: flex;
+
+            form {
+                height: 100%;
+                flex: 1;
+                input#msg {
+                    padding: 1.7rem;
+                    outline: none;
+                    border: none;
+                    // background-color: ;
+                    // &:hover {
+                    //     border: .1rem solid #ececec;
+                    // }
+                }
+            }
+            &--input{
+                width: 100%;
+            }
+            &--image {
+                width: 8rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-left: .1rem solid #ececec;
+            }
+        }
+    }
+}

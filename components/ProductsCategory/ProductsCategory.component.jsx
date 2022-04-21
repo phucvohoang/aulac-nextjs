@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import WrapperRouter from '../WrapperRouter/WrapperRouter';
+import { Link } from 'next/link'
+import useTranslation from 'next-translate/useTranslation';
 import {
   generateSlugCategoryName,
   getIconImage,
@@ -60,4 +61,4 @@ const ProductsCategory = (props) => {
   );
 };
 
-export default withRouter(ProductsCategory);
+export default WrapperRouter(ProductsCategory);

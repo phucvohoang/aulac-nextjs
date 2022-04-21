@@ -1,0 +1,79 @@
+.blogs__overview {
+    padding: 10rem 0;
+    &__header {
+        text-align: center;
+        color: #000;
+        margin-bottom: 4rem;
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+        p {
+            font-style: italic;
+        }
+    }
+
+    &__content {
+        
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 4rem;
+        
+        .blog__article {
+            width: 100%;
+            padding-bottom: 4rem;
+            background-color: #fff;
+            &__img {
+                border-top-left-radius: 1rem;
+                border-top-right-radius: 1rem;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                }
+            }
+
+            &__text {
+                padding: 0 2rem;
+                .article__text--title, .article__text--paragraph {
+                    margin: 1.5rem 0;
+                }
+                .article__text--paragraph {
+                    font-size: 1.2rem;
+                }
+                a {
+                    text-decoration: none;
+                    color: #000;
+                    transition: .4s;
+                }
+                .article__text--action {
+                    button {
+                      cursor: pointer;
+                      background-color: transparent;
+                      border: 2px solid lightgray;
+                      padding: 1rem 2rem;
+                      border-radius: 3rem;
+                      transition: .4s;
+            
+                      a {
+                        text-decoration: none;
+                        font-weight: bold;
+                        font-size: 1.4rem;
+                        color: #000;
+                      }
+                    }
+            
+                    button:hover  {
+                      background-color: $color-primary;
+                      border-color: $color-primary;
+            
+                      a {
+                        transition: .4s;
+                        color: #fff;
+                      }
+                    }
+                  }
+            }
+        }
+    }
+}

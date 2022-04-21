@@ -1,7 +1,7 @@
 import React from 'react';
 import { getBanner } from '../../util/helper';
 import './ProductsHeader.styled.scss';
-// import banner from '../../assets/banners/an-lien.jpg';
+// import banner from '../../public/assets/banners/an-lien.jpg';
 const ProductsHeader = ({ title, name = '' }) => {
   const getBannerImage = () => {
     if (name) {

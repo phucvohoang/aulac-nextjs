@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 //import { Link } from 'react-router-dom';
 import Blog from '../Blog/Blog.component.jsx';
-import { useTranslation } from 'react-i18next';
+import useTranslation from 'next-translate/useTranslation';
 import { Row, Pagination } from 'antd';
 const Article = (props) => {
   const { t } = useTranslation('common');

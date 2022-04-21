@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import imgSample from '../../assets/blog-3.jpeg';
+import Link from 'next/link';
+import imgSample from '../../public/assets/blog-3.jpeg';
 const Blog = (props) => {
   const { article, isNews } = props;
   // console.log(article)
@@ -14,7 +14,7 @@ const Blog = (props) => {
       </div>
       <div className="blog__article__text">
         <h1 className="article__text--title">
-          <Link to={`/${isNews ? 'news' : 'recipes'}/${article.slug}`}>
+          <Link href={`/${isNews ? 'news' : 'recipes'}/${article.slug}`}>
             {article.title}
           </Link>
         </h1>
@@ -34,7 +34,7 @@ const Blog = (props) => {
                 </p> */}
         <div className="article__text--action">
           <button>
-            <Link to={`/${isNews ? 'news' : 'recipes'}/${article.slug}`}>
+            <Link href={`/${isNews ? 'news' : 'recipes'}/${article.slug}`}>
               Đọc Tiếp
             </Link>
           </button>
