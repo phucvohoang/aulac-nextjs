@@ -7,7 +7,7 @@ const Modal = ({ regions, chooseRegion, isChoosen }) => {
     chooseRegion({ ...region, selectedBrand: branch });
   };
   const renderRegions = () => {
-    return regions.map((region) => {
+    return (regions || []).map((region) => {
       return (
         <Panel
           header={region.name}

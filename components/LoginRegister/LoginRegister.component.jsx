@@ -258,7 +258,7 @@ class LoginRegister extends React.Component {
                     onClick={this.handleClickForgetPW}
                     style={styleForgetPassword}
                   >
-                    <Link style={{ color: '#333' }} to="/forget-password">
+                    <Link style={{ color: '#333' }} href="/forget-password">
                       Forget Password
                     </Link>
                   </div>

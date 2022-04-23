@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, notification } from 'antd';
-import { Link } from 'next/link'
+import Link from 'next/link';
 import WrapperRouter from '../WrapperRouter/WrapperRouter';
 import {
   addCommas,
@@ -245,7 +245,7 @@ class ProductDetail extends React.Component {
           <img src={image} alt={`Quantity 1`} />
         </div>
         <div className="quantity__item__name">
-          <<Link href="#">{product.name}</Link>
+          <Link href="#">{product.name}</Link>
         </div>
         <div className="quantity__item__price">
           <span>{addCommas(product.salePrice)}đ</span>
@@ -307,12 +307,7 @@ class ProductDetail extends React.Component {
     //this.props.dispatch(addCart(cart));
   };
   hanldeSendProductToAdmin = async () => {
-    const {
-      product,
-      currentUser,
-      isLoggedIn,
-      handleShowPopChat,
-    } = this.props;
+    const { product, currentUser, isLoggedIn, handleShowPopChat } = this.props;
     if (isLoggedIn) {
       const { _id: uid, email, name } = currentUser;
       // // console.log(product);

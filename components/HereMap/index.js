@@ -1,6 +1,7 @@
 // src/DisplayMapClass.js
 import { notification } from 'antd';
 import * as React from 'react';
+import WrapperTranslate from '../WrapperTranslate/WrapperTranslate';
 import {
   Container,
   Map,
@@ -12,9 +13,8 @@ import {
   CurrentResult,
   Item,
   ContainerResult,
-  ContainerSearch
+  ContainerSearch,
 } from './styled';
-import { withTranslation } from 'react-i18next';
 class DisplayMapClass extends React.Component {
   mapRef = React.createRef();
 
@@ -279,30 +279,30 @@ class DisplayMapClass extends React.Component {
         <Map ref={this.mapRef}></Map>
         <Controll>
           <ContainerSearch>
-          <SearchBox className="search__box">
-            <Title>{t('checkoutpage.enterAddress')}:</Title>
-            <Input
-              onChange={this.handleChange}
-              value={textSearch}
-              onKeyDown={this.onKeyDown}
-            />
-          </SearchBox>
-          
-          <Title>
-            {t('checkoutpage.found')} {searchResult.length}{' '}
-            {t('checkoutpage.result')}
-          </Title>
-          <ListResult>{this.renderSearchResult()}</ListResult>
+            <SearchBox className="search__box">
+              <Title>{t('checkoutpage.enterAddress')}:</Title>
+              <Input
+                onChange={this.handleChange}
+                value={textSearch}
+                onKeyDown={this.onKeyDown}
+              />
+            </SearchBox>
+
+            <Title>
+              {t('checkoutpage.found')} {searchResult.length}{' '}
+              {t('checkoutpage.result')}
+            </Title>
+            <ListResult>{this.renderSearchResult()}</ListResult>
           </ContainerSearch>
           <ContainerResult>
-          <CurrentResult>
-            <p>
-              {this.props.textResult
-                ? this.props.textResult
-                : `${t('checkoutpage.destination')}:`}
-            </p>
-            <p>{currentAddress && currentAddress.addressNo}</p>
-          </CurrentResult>
+            <CurrentResult>
+              <p>
+                {this.props.textResult
+                  ? this.props.textResult
+                  : `${t('checkoutpage.destination')}:`}
+              </p>
+              <p>{currentAddress && currentAddress.addressNo}</p>
+            </CurrentResult>
           </ContainerResult>
         </Controll>
       </Container>
@@ -310,4 +310,4 @@ class DisplayMapClass extends React.Component {
   }
 }
 
-export default withTranslation('common')(DisplayMapClass);
+export default WrapperTranslate(DisplayMapClass);

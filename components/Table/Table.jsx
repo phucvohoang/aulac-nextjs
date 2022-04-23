@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import TableRow from './TableRow.jsx';
 import { addCommas } from '../../util/helper';
 import { Row, Space, Select, Col } from 'antd';

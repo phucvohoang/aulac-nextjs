@@ -2,11 +2,15 @@ import React from 'react';
 //import {ReactComponent as Logo} from '../../public/assets/footer/logo.svg'
 // import { Link, Link, withRouter } from 'react-router-dom';
 // import { Link, withRouter } from 'next/link';
-import Link from '../Link/Link';
+import Link from 'next/link';
 import LoginRegister from '../LoginRegister/LoginRegister.container.jsx';
-import { addCommas, mapCategory } from '../../util/helper';
+import {
+  addCommas,
+  generateSlugCategoryName,
+  mapCategory,
+} from '../../util/helper';
 import { Form, Input, Collapse, Space, Popover } from 'antd';
-import HeaderMobile from './Header-Mobile';
+// import HeaderMobile from './Header-Mobile';
 import FeatherIcon from 'feather-icons-react';
 // import withTranslation from 'next-translate/withTranslation';
 import WrapperTranslate from '../WrapperTranslate/WrapperTranslate.js';
@@ -143,7 +147,7 @@ class Header extends React.Component {
       return categories.map((cat, idx) => {
         return (
           <li key={idx} className="nav__category--item">
-            <Link href={`/products/${cat._id}`}>
+            <Link href={`/danh-muc/${generateSlugCategoryName(cat.name)}`}>
               <>{t(mapCategory(cat.name))}</>
             </Link>
           </li>
@@ -162,10 +166,10 @@ class Header extends React.Component {
     if (typeof window === 'undefined') return;
     const { pathname } = window?.location;
     if (pathname === '/checkout') {
-      return <p>{this.props.i18n.t('header.showroomWarn')}</p>;
+      return <p>{this.props.t('header.showroomWarn')}</p>;
     }
     if (pathname === '/orders') {
-      return <p>{this.props.i18n.t('changeShowroom')}</p>;
+      return <p>{this.props.t('changeShowroom')}</p>;
     }
     return <Collapse ghost>{this.renderSaleRegions()}</Collapse>;
   };
@@ -270,7 +274,7 @@ class Header extends React.Component {
               </div>
             </div>
           </div>
-          <HeaderMobile categories={this.props.categories} />
+          {/* <HeaderMobile categories={this.props.categories} /> */}
           <div className="header__navigation">
             <div className="nav__category nav__category__click">
               <i className="fas fa-bars nav__category__click" />
@@ -279,17 +283,18 @@ class Header extends React.Component {
                 <ul>{this.renderCategoriesHelper()}</ul>
               </div>
             </div>
-            {/* <div className="nav__navigation">
+            <div className="nav__navigation">
               <ul>
                 <li>
-                  <Link exact to="/" activeClassName="active__nav">
+                  <Link exact href="/" activeClassName="active__nav">
                     {t('header.home')}
                   </Link>
                 </li>
                 <li>
                   <Link
-                    to={`/products/${
-                      this.props.categories && this.props.categories[0]._id
+                    href={`/danh-muc/${
+                      this.props.categories &&
+                      generateSlugCategoryName(this.props.categories[0].name)
                     }`}
                     activeClassName="active__nav"
                   >
@@ -297,13 +302,13 @@ class Header extends React.Component {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/news" activeClassName="active__nav">
+                  <Link href="/tin-tuc" activeClassName="active__nav">
                     {t('header.news')}
                   </Link>
                 </li>
 
                 <li>
-                  <Link href="/recipes" activeClassName="active__nav">
+                  <Link href="/cong-thuc" activeClassName="active__nav">
                     {t('header.recipe')}
                   </Link>
                 </li>
@@ -319,7 +324,7 @@ class Header extends React.Component {
                   </Link>
                 </li>
               </ul>
-            </div> */}
+            </div>
             <div className="nav__contact">
               <i className="fas fa-headphones" />
               <p>0917 202 639</p>

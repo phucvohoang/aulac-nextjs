@@ -1,6 +1,6 @@
 import React from 'react';
-import ContactMap from './ContactMap.component';
-import { withTranslation } from 'react-i18next';
+import WrapperTranslate from '../WrapperTranslate/WrapperTranslate';
+// import ContactMap from './ContactMap.component';
 //import Input from '../InputGroup/InputGroup.jsx'
 //https://validatejs.org/
 
@@ -28,12 +28,12 @@ class ContactUsForm extends React.Component {
     return (
       <div className="contact__form__container">
         <div className="contact__form__map" id="contact__map">
-          <ContactMap
+          {/* <ContactMap
             googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBl6Q18pt3Waw2c-ugzsjpW0kgmTAJUxCA&v=3.exp&libraries=geometry,drawing,places"
             loadingElement={<div style={{ height: `100%`, width: '100%' }} />}
             containerElement={<div style={{ height: `100%` }} />}
             mapElement={<div style={{ height: `100%` }} />}
-          />
+          /> */}
         </div>
         <div className="contact__form__message">
           <h2
@@ -52,7 +52,7 @@ class ContactUsForm extends React.Component {
   }
 }
 
-export default withTranslation('common')(ContactUsForm);
+export default WrapperTranslate(ContactUsForm);
 /*
 <form action="#" className="contact__form">
                         <div  className="contact__form--header">

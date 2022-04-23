@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useQuery, useMutation, useLazyQuery } from '@apollo/client';
+import { useQuery, useMutation, useLazyQuery, useReactiveVar } from '@apollo/client';
 import ProductOverview from './ProductOverview.component';
 import { notification } from 'antd';
 import {
@@ -13,8 +13,13 @@ import {
   initWishList,
   removeItemWishList,
 } from '../../lib/graphql/resolvers/utils';
+import { regionVar } from '../../lib/graphql/cache';
+
 const ProductOverviewContainer = (props) => {
-  const { region } = props;
+  // const { region } = props;
+  // useReactiveVar
+  // regionVar
+  const region = useReactiveVar(regionVar);
   const [productLocal, setProductLocal] = useState(null);
   useQuery(GET_WISHLIST, {
     onCompleted: (data) => {

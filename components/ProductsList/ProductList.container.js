@@ -15,24 +15,12 @@ import {
 import { scrollToTop } from '../../util/helper';
 
 const ProductListContainer = (props) => {
-  const { categoryID, region } = props;
-  // console.log('============ Product List Container ===================')
-  // console.log(region._id, categoryID)
+  const { categoryID, region, slug } = props;
   const [productLocal, setProductLocal] = useState(null);
   const [listProducts, setProducts] = useState({});
   const [addWishListLocal] = useMutation(AddItemToWishList);
-  // const { data, loading, error } = useLazyQuery(LIST_PRODUCTS, {
-  //     variables: {
-  //         category: categoryID,
-  //         saleRegion: region._id,
-  //         page: 1,
-  //         perPage: 20
-  //     }
-  // })
   const [getProduct] = useLazyQuery(LIST_PRODUCTS, {
     onCompleted: (data) => {
-      // console.log(data.listProducts);
-      // window.scrollTo(0, 0);
       scrollToTop();
       setProducts(data.listProducts);
     },
@@ -44,8 +32,6 @@ const ProductListContainer = (props) => {
   });
   const [addWishList] = useMutation(CUSTOMER_ADD_WISHLIST, {
     onCompleted: (data) => {
-      // console.log(data);
-      // refetch().then(res => {
       //     console.log('refetch successfully')
       // })
       addItemWishList(productLocal);
@@ -103,6 +89,7 @@ const ProductListContainer = (props) => {
       getProduct={getProduct}
       regionId={region?._id}
       categoryID={categoryID}
+      slug={slug}
     />
   );
 };

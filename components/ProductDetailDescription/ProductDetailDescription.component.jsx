@@ -3,8 +3,9 @@ import {
   cleaningDescription,
   convertDataEditorToHTML,
 } from '../../util/helper';
+import WrapperTranslate from '../WrapperTranslate/WrapperTranslate';
 //import './ProductDetailDescription.styled.scss';
-import { withTranslation } from 'react-i18next';
+// import { withTranslation } from 'react-i18next';
 class ProductDetailDescription extends React.Component {
   constructor(props) {
     super(props);
@@ -73,4 +74,4 @@ class ProductDetailDescription extends React.Component {
   }
 }
 
-export default withTranslation('common')(ProductDetailDescription);
+export default WrapperTranslate(ProductDetailDescription);

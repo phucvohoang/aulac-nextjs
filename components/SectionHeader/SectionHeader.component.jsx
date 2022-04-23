@@ -1,6 +1,6 @@
 import React from 'react';
 import { getBanner } from '../../util/helper';
-import './ProductsHeader.styled.scss';
+// import './ProductsHeader.styled.scss';
 // import banner from '../../public/assets/banners/an-lien.jpg';
 const ProductsHeader = ({ title, name = '' }) => {
   const getBannerImage = () => {

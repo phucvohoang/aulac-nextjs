@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { addCommas } from '../../util/helper';
+import { addCommas, generateSlugCategoryName } from '../../util/helper';
 class TableRow extends React.Component {
   constructor(props) {
     super(props);
@@ -56,6 +56,7 @@ class TableRow extends React.Component {
     const { product, remove, listItemInStock } = this.props;
     // // console.log(product)
     const { quantity } = this.state;
+    console.log(this.props.product);
     // console.log(listItemInStock);
     const img = product.images ? product.images[0] : '';
     if (this.props.isMobile) {
@@ -73,13 +74,23 @@ class TableRow extends React.Component {
           <td className="table-p-name">
             <div>
               <div className="table-image">
-                <Link href={`/product/${product.slug}`}>
+                <Link
+                  href={`/san-pham/${generateSlugCategoryName(
+                    product?.category?.name
+                  )}/${product.slug}`}
+                >
                   <img src={img} alt={product.name} />
                 </Link>
               </div>
               <p style={{ margin: '15px 0px' }}>
-                <Link href={`/product/${product.slug}`}>{product.name}</Link> -{' '}
-                {addCommas(product.salePrice)}đ
+                <Link
+                  href={`/san-pham/${generateSlugCategoryName(
+                    product?.category?.name
+                  )}/${product.slug}`}
+                >
+                  {product.name}
+                </Link>{' '}
+                - {addCommas(product.salePrice)}đ
               </p>
               <p style={{ margin: '15px 0px', color: 'goldenrod' }}>
                 Giá: {addCommas(product.salePrice)}đ
@@ -145,12 +156,22 @@ class TableRow extends React.Component {
           </button>
         </td>
         <td className="table-image">
-          <Link href={`/product/${product.slug}`}>
+          <Link
+            href={`/san-pham/${generateSlugCategoryName(
+              product?.category?.name
+            )}/${product.slug}`}
+          >
             <img src={img} alt={product.name} />
           </Link>
         </td>
         <td className="table-p-name">
-          <Link href={`/product/${product.slug}`}>{product.name}</Link>
+          <Link
+            href={`/san-pham/${generateSlugCategoryName(
+              product?.category?.name
+            )}/${product.slug}`}
+          >
+            {product.name}
+          </Link>
         </td>
         <td className="table-p-price">
           <p>{addCommas(product.salePrice)}đ</p>

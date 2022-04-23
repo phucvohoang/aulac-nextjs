@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 
-import Product from "../Product/Product.container";
-import { Pagination, Row } from "antd";
+import Product from '../Product/Product.container';
+import { Pagination, Row } from 'antd';
 class ProductsList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       productDetail: {},
       currentPage: 1,
-      regionId: "",
+      regionId: '',
     };
   }
 
@@ -65,6 +65,7 @@ class ProductsList extends React.Component {
           product={p}
           addWishList={addWishList}
           removeWishList={removeWishList}
+          slug={this.props.slug}
         />
       );
     });

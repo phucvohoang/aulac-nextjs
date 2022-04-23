@@ -1,5 +1,5 @@
 // import React from 'react';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 import useTranslation from 'next-translate/useTranslation';
 
 const leftImg = '/assets/home/background/bg-home-widget-article_1.jpg';
@@ -11,7 +11,7 @@ const rightBotImg = '/assets/home/background/bg-home-widget-article_3.jpg';
 // const rightBotImg = "http://demo2.themelexus.com/efway/wp-content/uploads/2020/07/h2-banner05.jpg";
 const Elementor = (props) => {
   const { t } = useTranslation('common');
-  const router = useRouter()
+  const router = useRouter();
   return (
     <div className="elementor">
       <div className="elementor__left">
@@ -56,7 +56,7 @@ const Elementor = (props) => {
             <div className="elementor__btn">
               <button
                 onClick={() => {
-                  router.push('/recipes');
+                  router.push('/cong-thuc');
                 }}
               >
                 {t('seeAll')}
@@ -82,7 +82,7 @@ const Elementor = (props) => {
             <div className="elementor__btn">
               <button
                 onClick={() => {
-                  router.push('/news');
+                  router.push('/tin-tuc');
                 }}
               >
                 {t('seeAll')}

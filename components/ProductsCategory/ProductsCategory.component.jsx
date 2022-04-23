@@ -1,6 +1,6 @@
 import React from 'react';
 import WrapperRouter from '../WrapperRouter/WrapperRouter';
-import { Link } from 'next/link'
+import Link from 'next/link';
 import useTranslation from 'next-translate/useTranslation';
 import {
   generateSlugCategoryName,
@@ -16,12 +16,12 @@ const ProductsCategory = (props) => {
   };
   const renderCategoryItem = () => {
     //console.log(props)
-    const catIdParams = props.match.params.cateId;
-    return props.categories.map((category, idx) => {
+    const catIdParams = props.currentCategoryId;
+    return (props?.categories || []).map((category, idx) => {
       return (
         <li key={idx} className="products__category__item">
           <Link
-            to={`/products/${category._id}`}
+            href={`/danh-muc/${generateSlugCategoryName(category.name)}`}
             className={catIdParams === category._id ? 'active' : ''}
           >
             {/* {t(mapCategory(category.name))} */}

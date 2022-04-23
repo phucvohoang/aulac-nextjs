@@ -11,6 +11,7 @@ const ProductOverview = (props) => {
   const [currentTab, setTab] = useState(0);
 
   const { t } = useTranslation("common");
+  console.log(t)
   const { sections } = props;
   // const renderProducts = () => {
   //   if (sections.length > 0) {

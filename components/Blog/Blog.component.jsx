@@ -14,7 +14,7 @@ const Blog = (props) => {
       </div>
       <div className="blog__article__text">
         <h1 className="article__text--title">
-          <Link href={`/${isNews ? 'news' : 'recipes'}/${article.slug}`}>
+          <Link href={`/${isNews ? 'tin-tuc' : 'cong-thuc'}/${article.slug}`}>
             {article.title}
           </Link>
         </h1>
@@ -34,7 +34,7 @@ const Blog = (props) => {
                 </p> */}
         <div className="article__text--action">
           <button>
-            <Link href={`/${isNews ? 'news' : 'recipes'}/${article.slug}`}>
+            <Link href={`/${isNews ? 'tin-tuc' : 'cong-thuc'}/${article.slug}`}>
               Đọc Tiếp
             </Link>
           </button>

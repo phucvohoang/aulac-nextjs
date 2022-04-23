@@ -5,6 +5,7 @@ import { addCommas } from '../../util/helper';
 const Product = (props) => {
   //const idRegion = props.region ? props.region._id : ''
   //console.log(props.product)
+  const slugCategory = props.slug;
   const [showOverlay, setOverlay] = useState(false);
   //let productCustom = transformProductObject(props.product, props.region);
   // console.log("================= im in Product ===================")
@@ -64,7 +65,7 @@ const Product = (props) => {
       )}
 
       <div className="product__image">
-        <Link href={`/product/${slug}`}>
+        <Link href={`/san-pham/${slugCategory}/${slug}`}>
           <img src={image} alt={name} />
         </Link>
       </div>

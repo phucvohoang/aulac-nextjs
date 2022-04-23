@@ -15,8 +15,8 @@ const GET_HOME_COVER_SETTING = gql`
 `;
 
 const HomeSliderContainer = props => {
-    console.warn('===== This is our client object =====')
-    console.log(props.client)
+    // console.warn('===== This is our client object =====')
+    // console.log(props.client)
     // return <h1>Testing props client</h1>
     const { data, loading, error} = useQuery(GET_HOME_COVER_SETTING);
 
