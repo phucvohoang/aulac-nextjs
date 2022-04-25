@@ -16,9 +16,9 @@ class ContactUsForm extends React.Component {
     if (regions.length > 0) {
       return regions.map((region, idx) => {
         return (
-          <React.Fragment>
-            <h2 key={region._id}>{region.name}</h2>
-            <ol key={idx}>{this.renderBranch(region.branches)}</ol>
+          <React.Fragment key={region._id}>
+            <h2>{region.name}</h2>
+            <ol>{this.renderBranch(region.branches)}</ol>
           </React.Fragment>
         );
       });
@@ -52,7 +52,10 @@ class ContactUsForm extends React.Component {
   }
 }
 
-export default WrapperTranslate(ContactUsForm);
+const CompWithHook = WrapperTranslate(ContactUsForm);
+
+export default CompWithHook;
+// export default WrapperTranslate(ContactUsForm);
 /*
 <form action="#" className="contact__form">
                         <div  className="contact__form--header">

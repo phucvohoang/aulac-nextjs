@@ -1,4 +1,4 @@
-import ClientOnly from '../../components/Wrapper/fetchingClient';
+import ClientOnly from '../../../../components/Wrapper/fetchingClient';
 import FacbookCallBack from '../../../../containers/AuthCallback/Facebook';
 
 const FacbookCallBackPage = () => {

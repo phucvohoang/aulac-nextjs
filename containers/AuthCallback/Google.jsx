@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useMutation, gql, useLazyQuery, useReactiveVar } from '@apollo/client';
 import { Redirect } from 'react-router-dom';
-import { GET_WISHLIST } from '../../graphql/queries';
-import { handleSetLoggedInState, initWishList } from '../../graphql/utils';
-import { isLoggedInVar, currentUserVar } from '../../graphql/cache';
+import { GET_WISHLIST } from '../../lib/graphql/queries';
+import {
+  handleSetLoggedInState,
+  initWishList,
+} from '../../lib/graphql/resolvers/utils';
+import { isLoggedInVar, currentUserVar } from '../../lib/graphql/cache';
 import { registerTokenAndSubscribe } from '../../firebase/firebase.util';
 //rinaishiharaxxx@gmail.com ,
 //RinaIshihara762513

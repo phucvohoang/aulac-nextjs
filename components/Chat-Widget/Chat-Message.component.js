@@ -114,6 +114,7 @@ const Message = (props) => {
                 <a
                   target="_blank"
                   href={`https://google.com/maps?q=${coords.lat},${coords.lng}`}
+                  rel="noreferrer"
                 >
                   Vị trí của tôi
                 </a>

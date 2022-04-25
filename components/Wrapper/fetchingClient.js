@@ -9,9 +9,9 @@ const GET_HOME_BACKGROUND = gql`
   }
 `;
 
-export const ClientSide = (Component) => (props) => {
-  return typeof window === 'undefined' ? null : <Component {...props} />;
-};
+// export const ClientSide = (Component) => (props) => {
+//   return typeof window === 'undefined' ? null : <Component {...props} />;
+// };
 
 const ClientOnly = ({ children, ...delegated }) => {
   const [hasMounted, setHasMounted] = useState(false);
