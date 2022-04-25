@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useLazyQuery, useReactiveVar } from '@apollo/client';
 import SearchResult from './FlashSale.component';
-import { GET_PROMO_FLASH_SALE } from '../../graphql/queries';
-import { regionVar } from '../../graphql/cache';
+import { GET_PROMO_FLASH_SALE } from '../../lib/graphql/queries';
+import { regionVar } from '../../lib/graphql/cache';
 
 const FlashSaleContainer = (props) => {
   // const { data, loading, error } = useQuery(GET_REGIONS);

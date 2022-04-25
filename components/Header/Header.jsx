@@ -14,6 +14,7 @@ import { Form, Input, Collapse, Space, Popover } from 'antd';
 import FeatherIcon from 'feather-icons-react';
 // import withTranslation from 'next-translate/withTranslation';
 import WrapperTranslate from '../WrapperTranslate/WrapperTranslate.js';
+import WrapperRouter from '../WrapperRouter/WrapperRouter.js';
 const logo = '/assets/logo-2x.png';
 const bgHeader = '/assets/banners/header@2x.png';
 const { Panel } = Collapse;
@@ -340,5 +341,5 @@ class Header extends React.Component {
 }
 // export default Header;
 
-export default WrapperTranslate(Header);
+export default WrapperRouter(WrapperTranslate(Header));
 // export default withTranslation(Header, 'common');

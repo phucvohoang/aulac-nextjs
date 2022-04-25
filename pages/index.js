@@ -108,10 +108,10 @@ export const getStaticProps = async () => {
   let listCategories = [];
   let regions = [];
   try {
-    await apolloClient.query({
+    const query1 = apolloClient.query({
       query: LIST_CATEGORIES,
     });
-    await apolloClient.query({
+    const query2 = apolloClient.query({
       query: LIST_SALE_REGIONS,
     });
     const { listCategories: data } = apolloClient.cache.readQuery({
@@ -120,6 +120,7 @@ export const getStaticProps = async () => {
     const { listSaleRegions: regionsData } = apolloClient.cache.readQuery({
       query: LIST_SALE_REGIONS,
     });
+    await Promise.all([query1, query2]);
     regions = regionsData;
     listCategories = data;
   } catch (e) {

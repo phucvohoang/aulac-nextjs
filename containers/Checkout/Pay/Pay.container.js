@@ -69,7 +69,8 @@ const PayContainer = (props) => {
   };
   const { customerListMyCoupon } = data;
   if (!isLoggedIn) {
-    return router.push('/');
+    router.replace('/');
+    // return router.push('/');
   }
   return (
     <Pay

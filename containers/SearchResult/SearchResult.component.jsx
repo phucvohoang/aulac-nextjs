@@ -2,7 +2,8 @@ import React from 'react';
 import SectionHeader from '../../components/SectionHeader/SectionHeader.component.jsx';
 import ProductsCategory from '../../components/ProductsCategory/ProductCategory.container.js';
 import Product from '../../components/Product/Product.container';
-import { withTranslation } from 'react-i18next';
+import WrapperTranslate from '../../components/WrapperTranslate/WrapperTranslate.js';
+// import { withTranslation } from 'react-i18next';
 class SearchResult extends React.Component {
   constructor(props) {
     super(props);
@@ -10,35 +11,6 @@ class SearchResult extends React.Component {
       keyword: '',
     };
   }
-  // static getDerivedStateFromProps(nextProps, prevState){
-  //     // //console.log('calling getDerive')
-  //     if(nextProps.keyword !== prevState.keyword){
-  //         const { regionID, keyword, searchProducts} = nextProps;
-  //         searchProducts({
-  //             variables: {
-  //                 keyword: keyword,
-  //                 saleRegion: regionID,
-  //                 page: 1,
-  //                 perPage: 10
-  //             }
-  //         })
-  //         return { keyword: nextProps.keyword};
-  //    }
-  //     return null;
-  // }
-  // componentDidMount(){
-  //     const { regionID, keyword, searchProducts} = this.props;
-  //     // //console.log(regionID, keyword);
-
-  //     searchProducts({
-  //         variables: {
-  //             keyword: keyword,
-  //             saleRegion: regionID,
-  //             page: 1,
-  //             perPage: 10
-  //         }
-  //     })
-  // }
   renderProductsBody = () => {
     return (
       <div className="products__body__grid">{this.renderProductList()}</div>
@@ -59,7 +31,6 @@ class SearchResult extends React.Component {
             width: '100%',
           }}
         >
-          {/* Không có sản phẩm phù hợp */}
           {this.props.t('notFoundProduct')}
         </p>
       );
@@ -76,7 +47,6 @@ class SearchResult extends React.Component {
         <div className="products__body">
           <div className="products__body__left">
             <ProductsCategory />
-            {/* <ProductsOnSale/> */}
           </div>
           <div className="products__body__right">
             {this.renderProductsBody()}
@@ -87,4 +57,4 @@ class SearchResult extends React.Component {
   }
 }
 
-export default withTranslation('common')(SearchResult);
+export default WrapperTranslate(SearchResult);

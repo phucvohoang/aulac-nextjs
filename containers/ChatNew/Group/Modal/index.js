@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLazyQuery } from '@apollo/client';
-import { CUSTOMER_SEARCH_CUSTOMER } from '../../../../graphql/queries';
+import { CUSTOMER_SEARCH_CUSTOMER } from '../../../../lib/graphql/queries';
 import Modal from './Modal';
 import { checkAuth } from '../../../../util/helper';
 import { propTypes } from 'qrcode.react';

@@ -32,7 +32,7 @@ const CheckoutContainer = (props) => {
   }, []);
 
   if (!isLoggedIn) {
-    return router.push('/');
+    router.replace('/');
   }
   return (
     <Checkout

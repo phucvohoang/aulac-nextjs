@@ -1,18 +1,18 @@
 import React from 'react';
 import { useQuery, useReactiveVar } from '@apollo/client';
 import OrderDetail from './OrderDetails';
-import { CUSTOMER_GET_ORDER } from '../../graphql/queries';
-import { isLoggedInVar, currentUserVar } from '../../graphql/cache';
+import { CUSTOMER_GET_ORDER } from '../../lib/graphql/queries';
+import { isLoggedInVar, currentUserVar } from '../../lib/graphql/cache';
 const OrderDetailContainer = (props) => {
   //console.log(props);
   const currentUser = useReactiveVar(currentUserVar);
   const isLoggedIn = useReactiveVar(isLoggedInVar);
-  const orderId = props?.match?.params?.id ?? 'empty'
+  const orderId = props?.orderId ?? 'empty';
   // const { data: dataUser, loading, error } = useQuery(GET_CURRENT_USER);
   const { data: order } = useQuery(CUSTOMER_GET_ORDER, {
     fetchPolicy: 'network-only',
     variables: {
-      id: orderId
+      id: orderId,
     },
   });
   //console.log('calling');

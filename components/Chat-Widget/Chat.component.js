@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import { Widget, addResponseMessage, addUserMessage, renderCustomComponent } from 'react-chat-widget';
 import { notification } from 'antd';
 import ChatBox from './Chat-Body.component';
-import './custom-chat.css';
+// import './custom-chat.css';
 import FeatherIcon from 'feather-icons-react';
 // class Image extends Component {
 //     render() {

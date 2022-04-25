@@ -71,7 +71,8 @@ const SummaryContainer = (props) => {
     return <p>Đơn hàng đang trống...</p>;
   }
   if (!isLoggedIn) {
-    return router.push('/');
+    router.replace('/');
+    // return router.push('/');
   }
 
   const { totalAmountFinal } = data.customerPreCalculateOrderSummary;

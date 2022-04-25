@@ -1,7 +1,7 @@
 import React from 'react';
 import ForgetPwComp from './ForgetPW.component';
 import { useLazyQuery } from '@apollo/client';
-import { REQUEST_RESET_PASSWORD } from '../../graphql/queries';
+import { REQUEST_RESET_PASSWORD } from '../../lib/graphql/queries';
 
 const FogetPwContainer = () => {
   const [requestReset] = useLazyQuery(REQUEST_RESET_PASSWORD, {

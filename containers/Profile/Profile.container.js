@@ -26,12 +26,14 @@ const ProfileContainer = (props) => {
 
 const WrapperLogin = (props) => {
   // const { currentUser } = props.user;
+  const router = useRouter();
   const currentUser = useReactiveVar(currentUserVar);
   const isLoggedIn = useReactiveVar(isLoggedInVar);
 
   if (!isLoggedIn) {
     // return <Redirect to="/" />;
-    return router.push('/');
+    // return router.push('/');
+    router.replace('/');
   }
   return (
     <ProfileContainer

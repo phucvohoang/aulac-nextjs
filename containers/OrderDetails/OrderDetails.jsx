@@ -3,7 +3,8 @@ import SectionHeader from '../../components/SectionHeader/SectionHeader.componen
 import { Row, Col, Space, Spin, Card, Table, Divider } from 'antd';
 import { addCommas } from '../../util/helper';
 import QRCode from 'qrcode.react';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
+import useTranslation from 'next-translate/useTranslation';
 const convertAdress = (address) => {
   if (address) {
     const { addressNo } = address;

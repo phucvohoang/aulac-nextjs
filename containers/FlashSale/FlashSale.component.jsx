@@ -2,7 +2,8 @@ import React from 'react';
 import SectionHeader from '../../components/SectionHeader/SectionHeader.component.jsx';
 import ProductsCategory from '../../components/ProductsCategory/ProductCategory.container.js';
 import Product from '../../components/Product/Product.container';
-import { withTranslation } from 'react-i18next';
+import WrapperTranslate from '../../components/WrapperTranslate/WrapperTranslate.js';
+// import { withTranslation } from 'react-i18next';
 class SearchResult extends React.Component {
   constructor(props) {
     super(props);
@@ -79,4 +80,4 @@ class SearchResult extends React.Component {
   }
 }
 
-export default withTranslation('common')(SearchResult);
+export default WrapperTranslate(SearchResult);

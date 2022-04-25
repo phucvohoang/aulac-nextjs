@@ -33,12 +33,13 @@ import {
   // checkOrCreateRoomDriverUser,
 } from '../../firebase/firebase.util';
 import FeatherIcon from 'feather-icons-react';
-import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react';
+// import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react';
 import Stickers from '../../components/Chat-Widget/Stickers.container';
 import GridGif from '../../components/Chat-Widget/Gif';
 import ListMessage from './ListMessages/index';
 import { getItem, setItem } from '../../util/localStorage';
-import { withTranslation } from 'react-i18next';
+import WrapperTranslate from '../../components/WrapperTranslate/WrapperTranslate';
+// import { withTranslation } from 'react-i18next';
 class Chat extends React.Component {
   constructor(props) {
     super(props);
@@ -52,6 +53,8 @@ class Chat extends React.Component {
       isShowGif: false,
       isSending: false,
       groupName: '',
+      Picker: null,
+      SKIN_TONE_MEDIUM_DARK: null,
     };
   }
   componentDidMount() {
@@ -61,6 +64,19 @@ class Chat extends React.Component {
       // //console.log(oldData);
       const { currentChat, currentTab } = oldData;
       this.setState(() => ({ currentChat, currentTab }));
+      const setState = this.setState;
+      import('emoji-picker-react').then(
+        ({ default: Picker, SKIN_TONE_MEDIUM_DARK }) => {
+          Picker = Picker;
+          SKIN_TONE_MEDIUM_DARK = SKIN_TONE_MEDIUM_DARK;
+          // setEmoji({
+          //   Picker,
+          //   SKIN_TONE_MEDIUM_DARK,
+          // });
+          setState(() => ({ Picker, SKIN_TONE_MEDIUM_DARK }));
+          console.log('fetched success');
+        }
+      );
     }
     // //console.log('======== Not Found Old data ==========');
   }
@@ -69,6 +85,8 @@ class Chat extends React.Component {
   //   setItem('oldChatWithData', { currentChat, currentTab });
   // }
   scrollToBottom = () => {
+    if (!window) return;
+    const { document } = window;
     const box = document.querySelector('#messages-container');
     box.scrollTop = box.scrollHeight;
   };
@@ -426,8 +444,8 @@ class Chat extends React.Component {
             this.sendMessageToDriver(payload, pathFirestore);
           }
           if (currentTab === 'customer') {
-            console.log("===== Payload to Firebase =========")
-            console.log(payload)
+            console.log('===== Payload to Firebase =========');
+            console.log(payload);
             this.sendMessageToUser(payload, pathFirestore);
           }
         } else {
@@ -538,6 +556,8 @@ class Chat extends React.Component {
       isSending,
       to,
       groupName,
+      Picker,
+      SKIN_TONE_MEDIUM_DARK,
     } = this.state;
     // //console.log(to);
     const { t } = this.props;
@@ -647,10 +667,12 @@ class Chat extends React.Component {
                       width: 'auto',
                     }}
                   >
-                    <Picker
-                      onEmojiClick={this.onEmojiClick}
-                      skinTone={SKIN_TONE_MEDIUM_DARK}
-                    />
+                    {Picker && (
+                      <Picker
+                        onEmojiClick={this.onEmojiClick}
+                        skinTone={SKIN_TONE_MEDIUM_DARK}
+                      />
+                    )}
                   </div>
                 )}
               </Option>
@@ -719,4 +741,4 @@ class Chat extends React.Component {
   }
 }
 
-export default withTranslation('common')(Chat);
+export default WrapperTranslate(Chat);

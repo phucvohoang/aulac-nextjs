@@ -5,7 +5,7 @@ import Driver from './Driver';
 import {
   CUSTOMER_LIST_ORDERS,
   CUSTOMER_CANCEL_ORDER,
-} from '../../../graphql/queries';
+} from '../../../lib/graphql/queries';
 import { Spin } from 'antd';
 import { firestore } from '../../../firebase/firebase.util';
 

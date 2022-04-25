@@ -6,11 +6,10 @@ import { regionVar, cartItemsVar, languageVar } from '../../lib/graphql/cache';
 import {
   handleSetRegion,
   removeCartItem,
-  switchLanguage,
 } from '../../lib/graphql/resolvers/utils';
 import { flowRight } from 'lodash';
 import { graphql } from '@apollo/client/react/hoc';
-//import data from '../../data/fake-data.js';
+import setLanguage from 'next-translate/setLanguage';
 
 const LIST_CATEGORIES = gql`
   query ListCategories {
@@ -59,9 +58,11 @@ const HeaderContainer = (props) => {
   const handleChooseRegion = (region) => {
     handleSetRegion(region);
   };
-  const switchLang = (lng) => {
+  const switchLang = async (lng) => {
     // languageVar(lng);
-    switchLanguage(lng);
+    // switchLanguage(lng);
+    console.log(`preparing change to: ${lng}`);
+    await setLanguage(lng);
   };
   const FBUrl = props.facebookURL.loginSNS;
   const GoogleUrl = props.googleURL.loginSNS;

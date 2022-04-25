@@ -13,7 +13,7 @@ import ChatMessage from './Chat-Message.component';
 import FeaturedIcon from 'feather-icons-react';
 import { Upload, Row, Col, notification, Spin, Button } from 'antd';
 import Stickers from './Stickers.container';
-import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react';
+// import Picker, { SKIN_TONE_MEDIUM_DARK } from 'emoji-picker-react';
 import GridGif from './Gif';
 import { checkAuth } from '../../util/helper';
 import { lastMsgVar } from '../../lib/graphql/cache';
@@ -39,6 +39,27 @@ function shareLocation(cb) {
 }
 const ChatBody = (props) => {
   const dummy = useRef(null);
+  const [emoji, setEmoji] = useState({
+    Picker: null,
+    SKIN_TONE_MEDIUM_DARK: null,
+  });
+  if (window) {
+    console.log('we have window object, fetching emoji');
+    if (!emoji.Picker) {
+      console.log('we dont have Picker');
+      import('emoji-picker-react').then(
+        ({ default: Picker, SKIN_TONE_MEDIUM_DARK }) => {
+          Picker = Picker;
+          SKIN_TONE_MEDIUM_DARK = SKIN_TONE_MEDIUM_DARK;
+          setEmoji({
+            Picker,
+            SKIN_TONE_MEDIUM_DARK,
+          });
+          console.log('fetched success');
+        }
+      );
+    }
+  }
   const [state, setState] = useState({
     isUploading: false,
     textValue: '',
@@ -288,6 +309,7 @@ const ChatBody = (props) => {
       isShowGif: false,
     });
   };
+  const { Picker, SKIN_TONE_MEDIUM_DARK } = emoji;
   return (
     <div className="rcw-conversation-container active" aria-live="polite">
       <div className="rcw-header">
@@ -333,10 +355,12 @@ const ChatBody = (props) => {
                   width: 'auto',
                 }}
               >
-                <Picker
-                  onEmojiClick={onEmojiClick}
-                  skinTone={SKIN_TONE_MEDIUM_DARK}
-                />
+                {Picker && (
+                  <Picker
+                    onEmojiClick={onEmojiClick}
+                    skinTone={SKIN_TONE_MEDIUM_DARK}
+                  />
+                )}
               </div>
             )}
           </div>

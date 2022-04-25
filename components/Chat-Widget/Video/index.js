@@ -103,14 +103,14 @@ class PlayerComp extends React.Component {
 
   /* Close fullscreen */
   closeFullscreen = () => {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    } else if (document.webkitExitFullscreen) {
+    if (window && window?.document.exitFullscreen) {
+      window?.document.exitFullscreen();
+    } else if (window && window?.document.webkitExitFullscreen) {
       /* Safari */
-      document.webkitExitFullscreen();
-    } else if (document.msExitFullscreen) {
+      window?.document.webkitExitFullscreen();
+    } else if (window && window?.document.msExitFullscreen) {
       /* IE11 */
-      document.msExitFullscreen();
+      window?.document.msExitFullscreen();
     }
     this.video.current.classList.remove('video__fullscreen');
   };

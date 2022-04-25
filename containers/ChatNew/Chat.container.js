@@ -7,12 +7,12 @@ import {
   useSubscription,
   useReactiveVar,
 } from '@apollo/client';
-import { currentUserVar, isLoggedInVar } from '../../graphql/cache';
-import { CUSTOMER_LIST_ORDERS } from '../../graphql/queries';
-import {} from '../../graphql/utils';
+import { currentUserVar, isLoggedInVar } from '../../lib/graphql/cache';
+import { CUSTOMER_LIST_ORDERS } from '../../lib/graphql/queries';
+// import {} from '../../graphql/utils';
 import Chat from './Chat.component';
-import { graphql } from '@apollo/client/react/hoc';
-import { flowRight } from 'lodash';
+// import { graphql } from '@apollo/client/react/hoc';
+// import { flowRight } from 'lodash';
 import { getItem, setItem } from '../../util/localStorage';
 import { notification } from 'antd';
 import { Redirect } from 'react-router';
