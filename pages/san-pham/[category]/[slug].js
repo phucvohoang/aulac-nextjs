@@ -14,6 +14,7 @@ import {
   GET_PRODUCT_BY_SLUG,
 } from '../../../lib/graphql/queries';
 import ClientOnly from '../../../components/Wrapper/fetchingClient.js';
+import CustomHead from '../../../components/CustomHead/index.js';
 const ProductDetails = (props) => {
   const { isLoggedIn, addRecentlyViewed, getRecentlyView, product } = props;
   useEffect(() => {
@@ -42,10 +43,11 @@ const ProductDetails = (props) => {
   };
   return (
     <>
-      <Head>
-        <title>{product?.name}</title>
-        <meta property="og:image" content={product.images[0]} />
-      </Head>
+      <CustomHead
+        title={product?.name}
+        image={product?.images?.[0]}
+        description={product?.name}
+      />
       <div className="products__container">
         <div className="products__header">
           <SectionHeader />
