@@ -179,6 +179,9 @@ class ProductsList extends React.Component {
   };
   render() {
     // console.log(this.state)
+    if (this.props.products.length === 0) {
+      return <p>Loading...</p>;
+    }
     return (
       <React.Fragment>
         {this.renderProductsBody()}
