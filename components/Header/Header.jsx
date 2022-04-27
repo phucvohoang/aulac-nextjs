@@ -207,7 +207,7 @@ class Header extends React.Component {
                   onClick={() => {
                     this.props.switchLang('vn');
                   }}
-                  className={language === 'vn' && 'active'}
+                  className={language === 'vn' ? 'active' : undefined}
                 >
                   Vietnamese
                 </p>
@@ -215,7 +215,7 @@ class Header extends React.Component {
                   onClick={() => {
                     this.props.switchLang('en');
                   }}
-                  className={language === 'en' && 'active'}
+                  className={language === 'en' ? 'active' : undefined}
                 >
                   English
                 </p>

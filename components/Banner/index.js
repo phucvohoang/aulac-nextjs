@@ -25,12 +25,4 @@ const BannerContainer = (props) => {
     return <BannerRight Ads={getAdsDesktop} />;
   }
 };
-
-// export async function getServerSideProps() {
-//   try {
-
-//   } catch (e) {
-//     console.log(e)
-//   }
-// }
 export default BannerContainer;

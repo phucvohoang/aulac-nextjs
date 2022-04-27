@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ApolloProvider } from '@apollo/client';
 import { useApollo } from '../lib/apolloClient';
 import Header from '../components/Header/Header.container';
@@ -15,6 +15,20 @@ import Script from 'next/script';
 function MyApp({ Component, pageProps }) {
   const apolloClient = useApollo(pageProps.initialApolloState); // This will get data which got from server side
   // console.log(Header);
+  useEffect(() => {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('/firebase-messaging-sw.js')
+        .then((reg) => {
+          console.log('ServiceWorker is registered successfully--4');
+          console.log('Registration succeeded. Scope is ' + reg.scope);
+        })
+        .catch((e) => {
+          console.log('could not register');
+          console.log(e);
+        });
+    }
+  }, []);
   return (
     <ApolloProvider client={apolloClient}>
       <Header />
@@ -29,22 +43,6 @@ function MyApp({ Component, pageProps }) {
           <BannerContainer isRight={true} />
         </SetupClient>
       </ClientOnly>
-      <Script
-        // type="text/javascript"
-        src="https://js.api.here.com/v3/3.1/mapsjs-core.js"
-      ></Script>
-      <Script
-        // type="text/javascript"
-        src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
-      ></Script>
-      <Script
-        // type="text/javascript"
-        src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"
-      ></Script>
-      <Script
-        // type="text/javascript"
-        src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"
-      ></Script>
     </ApolloProvider>
   );
 }

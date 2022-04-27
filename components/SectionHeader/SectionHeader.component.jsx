@@ -1,5 +1,6 @@
 import React from 'react';
 import { getBanner } from '../../util/helper';
+import Image from 'next/image'
 // import './ProductsHeader.styled.scss';
 // import banner from '../../public/assets/banners/an-lien.jpg';
 const ProductsHeader = ({ title, name = '' }) => {
@@ -25,7 +26,7 @@ const ProductsHeader = ({ title, name = '' }) => {
         </div>
         {name && (
           <div className="banner__box">
-            <img src={getBannerImage()} alt="" />
+            <Image src={getBannerImage()} alt="" layout='fill' />
           </div>
         )}
       </div>

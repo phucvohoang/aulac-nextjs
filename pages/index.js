@@ -108,21 +108,21 @@ export const getStaticProps = async () => {
   let listCategories = [];
   let regions = [];
   try {
-    const query1 = apolloClient.query({
-      query: LIST_CATEGORIES,
-    });
-    const query2 = apolloClient.query({
-      query: LIST_SALE_REGIONS,
-    });
-    const { listCategories: data } = apolloClient.cache.readQuery({
-      query: LIST_CATEGORIES,
-    });
-    const { listSaleRegions: regionsData } = apolloClient.cache.readQuery({
-      query: LIST_SALE_REGIONS,
-    });
-    await Promise.all([query1, query2]);
-    regions = regionsData;
-    listCategories = data;
+    // const query1 = apolloClient.query({
+    //   query: LIST_CATEGORIES,
+    // });
+    // const query2 = apolloClient.query({
+    //   query: LIST_SALE_REGIONS,
+    // });
+    // const { listCategories: data } = apolloClient.cache.readQuery({
+    //   query: LIST_CATEGORIES,
+    // });
+    // await Promise.all([query1, query2]);
+    // const { listSaleRegions: regionsData } = apolloClient.cache.readQuery({
+    //   query: LIST_SALE_REGIONS,
+    // });
+    // regions = regionsData;
+    // listCategories = data;
   } catch (e) {
     console.log(e);
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import WrapperRouter from '../WrapperRouter/WrapperRouter';
 import Link from 'next/link';
+import Image from 'next/image'
 import useTranslation from 'next-translate/useTranslation';
 import {
   generateSlugCategoryName,
@@ -31,7 +32,7 @@ const ProductsCategory = (props) => {
               }`}
             >
               <div className="image__box">
-                <img src={getIcon(category.name)} />
+                <Image src={getIcon(category.name)} alt="category icon" layout='fill' />
               </div>
               <div
                 className={`text__box ${

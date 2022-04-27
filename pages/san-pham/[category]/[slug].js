@@ -13,10 +13,13 @@ import {
   LIST_SALE_REGIONS,
   GET_PRODUCT_BY_SLUG,
 } from '../../../lib/graphql/queries';
-import ClientOnly from '../../../components/Wrapper/fetchingClient.js';
+// import ClientOnly from '../../../components/Wrapper/fetchingClient.js';
 import CustomHead from '../../../components/CustomHead/index.js';
+import { useRouter } from 'next/router';
+import { Spin } from 'antd';
 const ProductDetails = (props) => {
   const { isLoggedIn, addRecentlyViewed, getRecentlyView, product } = props;
+  const router = useRouter()
   useEffect(() => {
     if (isLoggedIn) {
       addRecentlyViewed({
@@ -41,6 +44,10 @@ const ProductDetails = (props) => {
       });
     }
   };
+
+  if (router.isFallback) {
+    return <Spin />
+  }
   return (
     <>
       <CustomHead
@@ -76,20 +83,28 @@ const ProductDetails = (props) => {
   );
 };
 
-export async function getServerSideProps(context) {
+export async function getStaticPaths() {
+  // const apolloClient = initializeApollo()
+  return {
+    paths: [],
+    fallback: true
+  }
+}
+
+export async function getStaticProps(context) {
   const { params, query } = context;
   const { slug, category } = params;
   let { saleRegion } = query;
   const apolloClient = initializeApollo();
   let product = null;
   try {
-    await apolloClient.query({
-      query: LIST_SALE_REGIONS,
-    });
-    const { listSaleRegions: regions } = apolloClient.cache.readQuery({
-      query: LIST_SALE_REGIONS,
-    });
     if (!saleRegion) {
+      await apolloClient.query({
+        query: LIST_SALE_REGIONS,
+      });
+      const { listSaleRegions: regions } = apolloClient.cache.readQuery({
+        query: LIST_SALE_REGIONS,
+      });
       saleRegion =
         regions.find((item) => item.name.toLowerCase() === 'hồ chí minh')
           ?._id || '';

@@ -33,37 +33,5 @@ const ModalContainer = () => {
   );
 };
 
-export async function getServerSideProps() {
-  const apolloClient = initializeApollo();
-  let listCategories = [];
-  let regions = []
-  try {
-    await apolloClient.query({
-      query: LIST_CATEGORIES,
-    });
-    await apolloClient.query({
-      query: LIST_SALE_REGIONS
-    })
-    const { listCategories: data } = apolloClient.cache.readQuery({
-      query: LIST_CATEGORIES,
-    });
-    const { listSaleRegions: regionsData } = apolloClient.cache.readQuery({
-      query: LIST_SALE_REGIONS
-    })
-    console.log('im region data')
-    regions = regionsData
-    console.log(regions)
-    listCategories = data;
-  } catch (e) {
-    console.log(e);
-  }
-  return {
-    props: {
-      initialApolloState: apolloClient.cache.extract(),
-      categories: listCategories,
-      regions: regions
-    },
-  };
-}
 
 export default ModalContainer;
