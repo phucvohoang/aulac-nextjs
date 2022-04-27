@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 // import { transformProductObject } from '../../lib/graphql/resolvers/utils.js';
 import { addCommas } from '../../util/helper';
+import { getItem } from '../../util/localStorage';
 const Product = (props) => {
   //const idRegion = props.region ? props.region._id : ''
   //console.log(props.product)
@@ -51,6 +52,8 @@ const Product = (props) => {
       ? images[0]
       : 'https://aulacshop.com/uploads/img/1595487543_CHA-BONG-GA--GOI.jpg';
   // console.log(props.isInWishList)
+  const region = getItem('region');
+  // console.log(region);
   return (
     <div className="product">
       <div
@@ -65,7 +68,7 @@ const Product = (props) => {
       )}
 
       <div className="product__image">
-        <Link href={`/san-pham/${slugCategory}/${slug}`}>
+        <Link href={`/san-pham/${slugCategory}/${slug}/${region._id}`}>
           <img src={image} alt={name} />
         </Link>
       </div>

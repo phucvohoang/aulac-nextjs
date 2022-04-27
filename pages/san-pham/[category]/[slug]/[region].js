@@ -1,25 +1,25 @@
 import React, { useEffect } from 'react';
 import Head from 'next/head';
-import SectionHeader from '../../../components/SectionHeader/SectionHeader.component.jsx';
-import ProductsCategory from '../../../components/ProductsCategory/ProductCategory.container.js';
-import ProductDetail from '../../../components/ProductDetail/ProductDetail.container.jsx';
-import Product from '../../../components/Product/Product.container';
+import SectionHeader from '../../../../components/SectionHeader/SectionHeader.component.jsx';
+import ProductsCategory from '../../../../components/ProductsCategory/ProductCategory.container.js';
+import ProductDetail from '../../../../components/ProductDetail/ProductDetail.container.jsx';
+import Product from '../../../../components/Product/Product.container';
 // import { useTranslation } from 'react-i18next';
 import useTranslation from 'next-translate/useTranslation';
-import ProductDetailDescription from '../../../components/ProductDetailDescription/ProductDetailDescription.component.jsx';
+import ProductDetailDescription from '../../../../components/ProductDetailDescription/ProductDetailDescription.component.jsx';
 
-import { initializeApollo } from '../../../lib/apollo';
+import { initializeApollo } from '../../../../lib/apollo';
 import {
   LIST_SALE_REGIONS,
   GET_PRODUCT_BY_SLUG,
-} from '../../../lib/graphql/queries';
+} from '../../../../lib/graphql/queries';
 // import ClientOnly from '../../../components/Wrapper/fetchingClient.js';
-import CustomHead from '../../../components/CustomHead/index.js';
+import CustomHead from '../../../../components/CustomHead/index.js';
 import { useRouter } from 'next/router';
 import { Spin } from 'antd';
 const ProductDetails = (props) => {
   const { isLoggedIn, addRecentlyViewed, getRecentlyView, product } = props;
-  const router = useRouter()
+  const router = useRouter();
   useEffect(() => {
     if (isLoggedIn) {
       addRecentlyViewed({
@@ -46,7 +46,7 @@ const ProductDetails = (props) => {
   };
 
   if (router.isFallback) {
-    return <Spin />
+    return <Spin />;
   }
   return (
     <>
@@ -87,14 +87,15 @@ export async function getStaticPaths() {
   // const apolloClient = initializeApollo()
   return {
     paths: [],
-    fallback: true
-  }
+    fallback: true,
+  };
 }
 
 export async function getStaticProps(context) {
-  const { params, query } = context;
-  const { slug, category } = params;
-  let { saleRegion } = query;
+  const { params } = context;
+  const { slug, category, region } = params;
+  // let { saleRegion } = query;
+  let saleRegion = region;
   const apolloClient = initializeApollo();
   let product = null;
   try {

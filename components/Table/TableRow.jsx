@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { addCommas, generateSlugCategoryName } from '../../util/helper';
+import { getItem } from '../../util/localStorage';
 class TableRow extends React.Component {
   constructor(props) {
     super(props);
@@ -59,6 +60,7 @@ class TableRow extends React.Component {
     console.log(this.props.product);
     // console.log(listItemInStock);
     const img = product.images ? product.images[0] : '';
+    const region = getItem('region');
     if (this.props.isMobile) {
       return (
         <tr key={product.id}>
@@ -77,7 +79,7 @@ class TableRow extends React.Component {
                 <Link
                   href={`/san-pham/${generateSlugCategoryName(
                     product?.category?.name
-                  )}/${product.slug}`}
+                  )}/${product.slug}/${region._id}`}
                 >
                   <img src={img} alt={product.name} />
                 </Link>
@@ -86,7 +88,7 @@ class TableRow extends React.Component {
                 <Link
                   href={`/san-pham/${generateSlugCategoryName(
                     product?.category?.name
-                  )}/${product.slug}`}
+                  )}/${product.slug}/${region._id}`}
                 >
                   {product.name}
                 </Link>{' '}
@@ -159,7 +161,7 @@ class TableRow extends React.Component {
           <Link
             href={`/san-pham/${generateSlugCategoryName(
               product?.category?.name
-            )}/${product.slug}`}
+            )}/${product.slug}/${region._id}`}
           >
             <img src={img} alt={product.name} />
           </Link>
@@ -168,7 +170,7 @@ class TableRow extends React.Component {
           <Link
             href={`/san-pham/${generateSlugCategoryName(
               product?.category?.name
-            )}/${product.slug}`}
+            )}/${product.slug}/${region._id}`}
           >
             {product.name}
           </Link>
