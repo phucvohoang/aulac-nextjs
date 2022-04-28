@@ -21,7 +21,7 @@ const Article = (props) => {
             borderRadius: '.5rem',
           }}
         >
-          {t('empty')}
+          Loading...
         </p>
       );
     }

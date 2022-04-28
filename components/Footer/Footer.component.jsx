@@ -9,73 +9,73 @@ const satisfactionImg = '/assets/footer/satisfaction.png';
 const saveMoneyImg = '/assets/footer/save-money.png';
 const fastShippingImg = '/assets/footer/fast-shipping.png';
 const moneyBackImg = '/assets/footer/money-back.png';
-const supportImg = '/assets/footer/support.png';
-const logo = '/assets/logo.jpg';
+const supportImg = '/assets/footer/support.webp';
+const logo = '/assets/logo.webp';
 class Footer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      footerGuaranteeData: [
-        {
-          img: satisfactionImg,
-          title: ['100%', 'Satisfaction'],
-          content:
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore',
-        },
-        {
-          img: saveMoneyImg,
-          title: ['Save 20%%', 'when you'],
-          content:
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore',
-        },
-        {
-          img: fastShippingImg,
-          title: ['Fast Free%', 'Shipment'],
-          content:
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore',
-        },
-        {
-          img: moneyBackImg,
-          title: ['14-Day', 'Money Back'],
-          content:
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore',
-        },
-      ],
-    };
+    // this.state = {
+    //   footerGuaranteeData: [
+    //     {
+    //       img: satisfactionImg,
+    //       title: ['100%', 'Satisfaction'],
+    //       content:
+    //         'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore',
+    //     },
+    //     {
+    //       img: saveMoneyImg,
+    //       title: ['Save 20%%', 'when you'],
+    //       content:
+    //         'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore',
+    //     },
+    //     {
+    //       img: fastShippingImg,
+    //       title: ['Fast Free%', 'Shipment'],
+    //       content:
+    //         'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore',
+    //     },
+    //     {
+    //       img: moneyBackImg,
+    //       title: ['14-Day', 'Money Back'],
+    //       content:
+    //         'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore',
+    //     },
+    //   ],
+    // };
   }
 
   style = {
     backgroundColor: '#fff',
   };
 
-  renderFooterGuarantee = () => {
-    const { footerGuaranteeData } = this.state;
+  // renderFooterGuarantee = () => {
+  //   const { footerGuaranteeData } = this.state;
 
-    return footerGuaranteeData.map((g, idx) => {
-      return (
-        <div className="guarantee__block" key={idx}>
-          <div className="guarantee__block__header">
-            <div className="block__header__img">
-              <img src={g.img} alt={`Guarantee ${idx}`} />
-            </div>
-            <div className="block__header__title">
-              {g.title.map((t, idxT) => {
-                return <span key={idxT}>{t}</span>;
-              })}
-            </div>
-          </div>
-          <div className="guarantee__block__body">
-            <p>{g.content}</p>
-          </div>
-        </div>
-      );
-    });
-  };
+  //   return footerGuaranteeData.map((g, idx) => {
+  //     return (
+  //       <div className="guarantee__block" key={idx}>
+  //         <div className="guarantee__block__header">
+  //           <div className="block__header__img">
+  //             <img src={g.img} alt={`Guarantee ${idx}`} />
+  //           </div>
+  //           <div className="block__header__title">
+  //             {g.title.map((t, idxT) => {
+  //               return <span key={idxT}>{t}</span>;
+  //             })}
+  //           </div>
+  //         </div>
+  //         <div className="guarantee__block__body">
+  //           <p>{g.content}</p>
+  //         </div>
+  //       </div>
+  //     );
+  //   });
+  // };
 
   renderCategory = () => {
     const { categories } = this.props;
-    console.log('this is categories in footer')
-    console.log(categories)
+    console.log('this is categories in footer');
+    console.log(categories);
     if (categories) {
       return categories.map((cat, idx) => {
         return (
@@ -87,7 +87,7 @@ class Footer extends React.Component {
         );
       });
     } else {
-      return <p>Empty</p>
+      return <p>Empty</p>;
     }
   };
   render() {
@@ -133,8 +133,8 @@ class Footer extends React.Component {
     );
   }
 }
-const Testing = props => {
-  return <h1>This is footer</h1>
-}
+const Testing = (props) => {
+  return <h1>This is footer</h1>;
+};
 
 export default WrapperTranslate(Footer);

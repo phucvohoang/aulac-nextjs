@@ -15,8 +15,8 @@ import FeatherIcon from 'feather-icons-react';
 // import withTranslation from 'next-translate/withTranslation';
 import WrapperTranslate from '../WrapperTranslate/WrapperTranslate.js';
 import WrapperRouter from '../WrapperRouter/WrapperRouter.js';
-const logo = '/assets/logo-2x.png';
-const bgHeader = '/assets/banners/header@2x.png';
+const logo = '/assets/logo-2x.webp';
+const bgHeader = '/assets/banners/header@2x.webp';
 const { Panel } = Collapse;
 // const logo = "https://aulacshop.com/assets/img/logo.png"
 class Header extends React.Component {

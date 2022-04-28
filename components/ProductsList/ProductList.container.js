@@ -32,17 +32,7 @@ const ProductListContainer = (props) => {
   });
   const [addWishList] = useMutation(CUSTOMER_ADD_WISHLIST, {
     onCompleted: (data) => {
-      //     console.log('refetch successfully')
-      // })
       addItemWishList(productLocal);
-      // addWishListLocal({variables: {
-      //     item: productLocal
-      // }}).then(res => {
-      //     notification.success({
-      //         message: 'Thành Công',
-      //         description: 'Đã thêm danh mục ưa thích'
-      //     })
-      // })
     },
     onError: (e) => {
       notification.error({

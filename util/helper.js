@@ -1,18 +1,18 @@
-const iconAnLien = '/assets/icon/icon-an-lien.png';
-const iconGiaVi = '/assets/icon/icon-gia-vi.png';
-const iconGiaiKhat = '/assets/icon/icon-giai-khat.png';
-const iconHangKho = '/assets/icon/icon-hang-kho.png';
-const iconHangLanh = '/assets/icon/icon-hang-lanh.png';
-const iconHangLon = '/assets/icon/icon-hang-lon.png';
-const iconTietTrung = '/assets/icon/icon-tiet-trung.png';
+const iconAnLien = '/assets/icon/icon-an-lien.webp';
+const iconGiaVi = '/assets/icon/icon-gia-vi.webp';
+const iconGiaiKhat = '/assets/icon/icon-giai-khat.webp';
+const iconHangKho = '/assets/icon/icon-hang-kho.webp';
+const iconHangLanh = '/assets/icon/icon-hang-lanh.webp';
+const iconHangLon = '/assets/icon/icon-hang-lon.webp';
+const iconTietTrung = '/assets/icon/icon-tiet-trung.webp';
 
-const bannerAnLien = '/assets/banners/an-lien/an-lien-desk.png';
-const bannerGiaVi = '/assets/banners/gia-vi/gia-vi-desk.png';
-const bannerGiaiKhat = '/assets/banners/giai-khat/giai-khat-desk.png';
-const bannerHangKho = '/assets/banners/hang-kho/hang-kho-desk.png';
-const bannerHangLanh = '/assets/banners/hang-lanh/hang-lanh-desk.png';
-const bannerHangLon = '/assets/banners/hang-lon/hang-lon-desk.png';
-const bannerTietTrung = '/assets/banners/tiet-trung/tiet-trung-desk.png';
+const bannerAnLien = '/assets/banners/an-lien/an-lien-desk.webp';
+const bannerGiaVi = '/assets/banners/gia-vi/gia-vi-desk.webp';
+const bannerGiaiKhat = '/assets/banners/giai-khat/giai-khat-desk.webp';
+const bannerHangKho = '/assets/banners/hang-kho/hang-kho-desk.webp';
+const bannerHangLanh = '/assets/banners/hang-lanh/hang-lanh-desk.webp';
+const bannerHangLon = '/assets/banners/hang-lon/hang-lon-desk.webp';
+const bannerTietTrung = '/assets/banners/tiet-trung/tiet-trung-desk.webp';
 
 export const getIconImage = (slugName) => {
   switch (slugName) {

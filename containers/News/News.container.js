@@ -1,22 +1,12 @@
 import React from 'react';
 import { useQuery, gql } from '@apollo/client';
 import News from './News';
-const LIST_NEWS = gql`
-  query ListNews {
-    listNews {
-      docs {
-        title
-        _id
-        slug
-        content
-        cover
-      }
-    }
-  }
-`;
+import { LIST_NEWS } from '../../lib/graphql/queries';
 
 const NewsContainer = () => {
-  const { data, loading, error } = useQuery(LIST_NEWS);
+  const { data, loading, error } = useQuery(LIST_NEWS, {
+    fetchPolicy: 'network-only',
+  });
   if (loading) {
     return <p>Loading...</p>;
   }
