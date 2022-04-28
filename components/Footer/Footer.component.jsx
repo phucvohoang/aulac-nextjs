@@ -133,8 +133,5 @@ class Footer extends React.Component {
     );
   }
 }
-const Testing = (props) => {
-  return <h1>This is footer</h1>;
-};
 
 export default WrapperTranslate(Footer);

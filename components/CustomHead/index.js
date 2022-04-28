@@ -5,6 +5,10 @@ const CustomHead = (props) => {
   return (
     <Head>
       <title>{title || 'Âu Lạc Shop'}</title>
+      <meta
+        name="description"
+        content={description || 'Thực Phẩm Chay Âu Lạc'}
+      />
       <meta property="og:image" content={image || '/assets/logo-2x.png'} />
       <meta property="og:title" content={title} />
       <meta
